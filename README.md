@@ -16,7 +16,7 @@ We are thankful for the collaborators, users who provide feedback, and researche
 Usage
 -----
 
-Source-code is available in bitbucket, and can as such always be forked or cloned from https://bitbucket.org/sorend/fuzzy4j .
+Source-code is available in GitHub, and can as such always be forked or cloned from https://github.com/sorend/fuzzy4j .
 The pre-built artifacts are deployed in the http://conjars.org repository. You can add this repository to your Maven
 (or Maven compatible, such as Ivy or SBT) for easy inclusion:
 
