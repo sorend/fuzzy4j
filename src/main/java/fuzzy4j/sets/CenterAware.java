@@ -29,7 +29,7 @@ package fuzzy4j.sets;
  * Interface which specifies a function that is aware about its center point.
  * (for example a triangular function has a center where f(x) = 1)
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public interface CenterAware {
     /**

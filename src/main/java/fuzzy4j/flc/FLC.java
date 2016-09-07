@@ -37,7 +37,7 @@ import java.util.logging.Logger;
  * Implementation of a fuzzy logic controller.
  *
  * @see ControllerBuilder
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class FLC {
 

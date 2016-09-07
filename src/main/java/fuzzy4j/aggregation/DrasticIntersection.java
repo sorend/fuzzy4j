@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>I_D(a, b) = b if a = 1, a if b = 1, 0 otherwise</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class DrasticIntersection implements Norm {
 

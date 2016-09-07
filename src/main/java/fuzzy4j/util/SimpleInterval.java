@@ -32,7 +32,7 @@ import fuzzy4j.sets.SupportAware;
 /**
  * Representation of an interval.
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
 

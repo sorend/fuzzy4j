@@ -30,7 +30,7 @@ import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class TrapezoidalFunctionTest {
 

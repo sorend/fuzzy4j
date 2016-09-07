@@ -37,7 +37,7 @@ import fuzzy4j.util.SimpleInterval;
  * sense (that is, support does not include -inf or inf)
  *
  * @see fuzzy4j.util.SimpleInterval
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public interface SupportAware {
     /**

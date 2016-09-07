@@ -32,7 +32,7 @@ import java.util.Arrays;
  * [1] Yager, R. R., "On ordered weighted averaging aggregation operators in multi-criteria decision making,"
  *  IEEE Transactions on Systems, Man and Cybernetics 18, 183-190, 1988.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class OWA implements Aggregation {
 

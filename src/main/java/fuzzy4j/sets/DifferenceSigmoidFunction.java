@@ -26,7 +26,7 @@
 package fuzzy4j.sets;
 
 /**
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class DifferenceSigmoidFunction implements FuzzyFunction {
 

@@ -33,7 +33,7 @@ import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
 
 /**
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class OWATest {
 

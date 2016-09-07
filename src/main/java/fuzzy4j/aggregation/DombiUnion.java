@@ -35,7 +35,7 @@ package fuzzy4j.aggregation;
  * [1] J. Dombi, "A general class of fuzzy operators, the DeMorgan class of fuzzy operators and fuzziness measures induced by fuzzy operators",
  *      Fuzzy Sets and Systems 8, pp. 149-163, 1982.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class DombiUnion implements Norm {
 

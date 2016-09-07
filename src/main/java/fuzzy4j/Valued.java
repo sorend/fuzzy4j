@@ -28,7 +28,7 @@ package fuzzy4j;
 /**
  * Interface for marking valued objects.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public interface Valued {
     /**

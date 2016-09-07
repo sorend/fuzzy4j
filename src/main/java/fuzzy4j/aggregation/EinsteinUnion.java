@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>U_E(a, b) = (a + b) / (1 + (ab))</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class EinsteinUnion implements Norm {
 

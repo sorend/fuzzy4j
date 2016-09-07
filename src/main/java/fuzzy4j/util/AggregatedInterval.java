@@ -29,7 +29,7 @@ package fuzzy4j.util;
  * Supports aggregating ranges
  *
  * @see SimpleInterval
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class AggregatedInterval implements Range {
     private Range[] ranges;

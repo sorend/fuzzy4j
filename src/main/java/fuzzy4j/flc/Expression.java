@@ -28,7 +28,7 @@ package fuzzy4j.flc;
 /**
  * Representation of an expression for evaluation
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public interface Expression {
 

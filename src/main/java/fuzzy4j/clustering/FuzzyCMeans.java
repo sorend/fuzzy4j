@@ -28,7 +28,7 @@ package fuzzy4j.clustering;
 import java.util.Vector;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class FuzzyCMeans {
 

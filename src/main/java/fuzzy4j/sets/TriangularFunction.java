@@ -48,7 +48,7 @@ import static fuzzy4j.util.SimpleInterval._;
  * </pre>
  *
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class TriangularFunction implements FuzzyFunction, SupportAware, CenterAware {
 

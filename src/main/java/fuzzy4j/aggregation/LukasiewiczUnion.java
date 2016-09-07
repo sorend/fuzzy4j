@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>U_L(a, b) = min(a + b, 1)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class LukasiewiczUnion implements Norm {
 

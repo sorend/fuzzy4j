@@ -32,7 +32,7 @@ package fuzzy4j.sets;
  *
  * The parameter a controls the rate of decay.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class ExponentialDecayFunction implements FuzzyFunction {
 

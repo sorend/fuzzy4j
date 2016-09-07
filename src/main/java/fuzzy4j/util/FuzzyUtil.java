@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class FuzzyUtil {
 

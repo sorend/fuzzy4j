@@ -30,7 +30,7 @@ import fuzzy4j.util.SimpleInterval;
  * Implementation of an S-shape membershipi function.
  *
  * Negate the function to create Z-shape.
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class SFunction implements FuzzyFunction, SupportAware, CenterAware {
 

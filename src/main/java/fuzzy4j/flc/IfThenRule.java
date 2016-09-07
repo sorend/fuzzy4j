@@ -28,7 +28,7 @@ package fuzzy4j.flc;
 /**
  * Representation of the fuzzy if then rule.
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class IfThenRule {
 

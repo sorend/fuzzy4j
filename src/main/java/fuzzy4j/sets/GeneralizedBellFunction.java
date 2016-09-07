@@ -33,7 +33,7 @@ package fuzzy4j.sets;
  *
  * This is equal to the Beta-function for {@code mu(x, alpha, 1, gamma)}
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class GeneralizedBellFunction implements FuzzyFunction {
 

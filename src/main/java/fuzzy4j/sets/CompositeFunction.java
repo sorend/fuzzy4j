@@ -41,7 +41,7 @@ import java.util.Arrays;
  * CompositeFunction prod = new CompositeFunction(AlgebraicProduct.INSTANCE, f1, f2);
  * }
  * </pre>
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class CompositeFunction implements FuzzyFunction {
 

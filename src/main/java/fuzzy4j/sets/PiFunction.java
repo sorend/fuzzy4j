@@ -42,7 +42,7 @@ package fuzzy4j.sets;
  * [1] Saroj K. Meher, "A new Fuzzy Supervised Classification Method based on Aggregation Operator",
  *  in 3rd Int. IEEE Conf. on Signal-Image Tech. and Internet-Based Systems, 2008.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class PiFunction implements FuzzyFunction, CenterAware {
 

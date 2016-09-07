@@ -32,7 +32,7 @@ import java.util.Arrays;
  * [1] Henrik L. Larsen, "Multiplicative and implicative importance weighted averaging operators with accurate andness direction",
  *      In Proc. of IFSA-EUSFLAT, 2009.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WeightedOWA implements WeightedAggregation {
 

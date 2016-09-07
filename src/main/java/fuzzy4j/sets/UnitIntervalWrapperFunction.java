@@ -30,7 +30,7 @@ package fuzzy4j.sets;
  * Defined for the function f(x)
  *      <code>U_W(x) = min(1, max(0, f(x)))</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 class UnitIntervalWrapperFunction implements FuzzyFunction {
     private FuzzyFunction inner;

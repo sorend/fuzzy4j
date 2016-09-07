@@ -32,7 +32,7 @@ import fuzzy4j.sets.FuzzyFunction;
  * Defined as:
  *  <code>N_Y(p, x) = (1 - x^p)^(1/p)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class YagerNegation extends NegationFunction {
 

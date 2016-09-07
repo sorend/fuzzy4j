@@ -32,7 +32,7 @@ package fuzzy4j.aggregation;
  *
  * [1] Wolfram Alpha, "HarmonicMean", <a href="http://mathworld.wolfram.com/HarmonicMean.html">http://mathworld.wolfram.com/HarmonicMean.html</a>, 2011
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class HarmonicMean implements Aggregation {
 

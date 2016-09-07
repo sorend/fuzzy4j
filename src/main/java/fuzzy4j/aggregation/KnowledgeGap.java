@@ -31,7 +31,7 @@ package fuzzy4j.aggregation;
  * Defined as:
  *      <code>M_K(A) = min max i ( ai ) , 1 − ( max i ( ai ) − min i ( ai ) )</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class KnowledgeGap implements Aggregation {
 

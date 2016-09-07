@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 /**
  * Wraps a weighted aggregation in the unweighted case, by providing the weights explicitly.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WithWeightedAggregation implements Aggregation {
 

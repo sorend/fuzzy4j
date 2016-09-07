@@ -37,7 +37,7 @@ import fuzzy4j.util.SimpleInterval;
  *      x0 is the location of the x-axis position of the center of the curve.
  *      alpha defines the steepness of the curve. alpha is large means steep, alpha is small (<0) means less steep.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class SigmoidFunction implements FuzzyFunction, SupportAware {
 

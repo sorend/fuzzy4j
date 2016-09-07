@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>I_E(a, b) = (ab) / (2 - (a + b - ab)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class EinsteinIntersection implements Norm {
 

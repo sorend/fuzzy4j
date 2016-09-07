@@ -32,7 +32,7 @@ package fuzzy4j.aggregation;
  *
  * not(x) = 1 - x, using standard Zadeh negation.
  *
-* @author Soren A. Davidsen <soren@tanesha.net>
+* @author Soren A. Davidsen <sorend@gmail.com>
 */
 class DeMorganDuality implements Norm, Aggregation {
 

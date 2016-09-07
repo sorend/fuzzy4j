@@ -32,7 +32,7 @@ import fuzzy4j.sets.FuzzyFunction;
  * Defined as:
  *  <code>N_S(p, x) = (1 - x) / (1 + p * x)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class SugenoNegation extends NegationFunction {
 

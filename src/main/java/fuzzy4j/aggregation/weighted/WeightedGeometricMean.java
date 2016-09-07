@@ -32,7 +32,7 @@ import fuzzy4j.aggregation.Aggregation;
  * Defined as:
  *      <code>M_WG((w_1, a_1), (w_2, a_2), ... (w_n, a_n)) = exp[ (Sum_i w_i ln a_i) / (Sum_i w_i) ]</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WeightedGeometricMean implements WeightedAggregation {
     @Override

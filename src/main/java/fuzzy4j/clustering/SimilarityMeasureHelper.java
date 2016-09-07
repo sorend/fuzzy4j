@@ -26,7 +26,7 @@
 package fuzzy4j.clustering;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class SimilarityMeasureHelper {
 

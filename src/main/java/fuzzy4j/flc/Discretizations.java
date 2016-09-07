@@ -30,7 +30,7 @@ import static fuzzy4j.flc.Term.term;
 /**
  * Implementation of simple arithmetic discretizations.
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class Discretizations {
 

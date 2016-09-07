@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 /**
  * Sets default weight, to allow unweighted aggregations to use a weighted aggregation.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WithDefaultWeightedAggregation implements Aggregation {
 

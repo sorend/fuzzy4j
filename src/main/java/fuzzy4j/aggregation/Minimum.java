@@ -30,7 +30,7 @@ package fuzzy4j.aggregation;
  * Defined as:
  *    <code>M_M(a_1, a_2, ... a_n) = min^n_k=1 a_k</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class Minimum implements Norm, Aggregation {
 

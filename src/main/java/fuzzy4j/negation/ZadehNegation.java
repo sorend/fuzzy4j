@@ -29,7 +29,7 @@ import fuzzy4j.sets.FuzzyFunction;
 /**
  * Inverse function, inverses another function.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class ZadehNegation extends NegationFunction {
 

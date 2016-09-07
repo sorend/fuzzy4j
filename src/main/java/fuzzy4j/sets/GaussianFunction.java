@@ -34,7 +34,7 @@ package fuzzy4j.sets;
  *     c is the center (top) of the distribution
  *     s decides the support
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class GaussianFunction implements FuzzyFunction {
 

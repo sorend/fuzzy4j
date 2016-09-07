@@ -28,7 +28,7 @@ package fuzzy4j.aggregation;
 /**
  * Marker interface for norm-class aggregation operators
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public interface Norm extends Aggregation {
 

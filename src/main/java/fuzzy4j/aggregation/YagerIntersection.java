@@ -32,7 +32,7 @@ package fuzzy4j.aggregation;
  *
  * To get the T-CoNorm operator use {@link fuzzy4j.aggregation.YagerIntersection#duality()}.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class YagerIntersection implements Norm {
 

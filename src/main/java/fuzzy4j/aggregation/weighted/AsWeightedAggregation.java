@@ -29,7 +29,7 @@ import fuzzy4j.aggregation.Aggregation;
 /**
  * Wrap an unweighted aggregation as a weighted one (disregarding all weights)
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AsWeightedAggregation implements WeightedAggregation {
 

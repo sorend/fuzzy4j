@@ -28,7 +28,7 @@ package fuzzy4j.aggregation.weighted;
 import org.junit.Test;
 
 /**
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WeightedOWATest {
 

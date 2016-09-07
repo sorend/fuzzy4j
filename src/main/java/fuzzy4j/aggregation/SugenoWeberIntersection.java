@@ -31,7 +31,7 @@ import fuzzy4j.util.ParametersUtil;
  *
  * To get a union operator, use {@link fuzzy4j.aggregation.SugenoWeberIntersection#duality()}.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class SugenoWeberIntersection implements Norm {
 

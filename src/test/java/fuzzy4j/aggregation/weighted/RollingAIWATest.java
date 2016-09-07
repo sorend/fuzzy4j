@@ -31,7 +31,7 @@ import static junit.framework.Assert.assertEquals;
 import static fuzzy4j.aggregation.weighted.WeightedValue._;
 
 /**
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class RollingAIWATest {
 

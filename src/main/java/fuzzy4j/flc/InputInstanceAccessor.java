@@ -29,7 +29,7 @@ import fuzzy4j.aggregation.Aggregation;
 
 /**
  * Retrieves the discretized value.
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public interface InputInstanceAccessor {
 

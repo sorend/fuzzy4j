@@ -32,7 +32,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public final class SingletonsSet<V extends Valued> {
 

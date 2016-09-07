@@ -34,7 +34,7 @@ package fuzzy4j.aggregation.weighted;
  * [1] H. L. Larsen, "Multiplicative and implicative importance weighted averaging aggregation operators with accurate andness direction",
  *      In Proc. of IFSA-EUSFLAT 2009, 2009.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AWA implements WeightedAggregation {
 

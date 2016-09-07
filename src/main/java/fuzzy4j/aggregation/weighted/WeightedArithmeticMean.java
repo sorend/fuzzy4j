@@ -32,7 +32,7 @@ import fuzzy4j.aggregation.Aggregation;
  * Defined as:
  *    <code>h_WAM((w_1, a_1), (w_2, a_2), ... (w_n, a_n)) = (Sum^n_i=1 w_i * a_i) / (Sum^n_i=1 w_i)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class WeightedArithmeticMean implements WeightedAggregation {
     @Override

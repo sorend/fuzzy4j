@@ -35,7 +35,7 @@ package fuzzy4j.aggregation;
  *
  * [1] Wolfram Alpha, Power Mean, http://mathworld.wolfram.com/PowerMean.html, 2011
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class PowerMean implements Aggregation {
 

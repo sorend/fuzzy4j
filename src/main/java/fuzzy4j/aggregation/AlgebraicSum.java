@@ -32,7 +32,7 @@ package fuzzy4j.aggregation;
  * For multiple operators
  *      N_S(a1, a2... an) = 1 - Prod^n_k=1 1-a_k
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AlgebraicSum extends AbstractNorm {
 

@@ -27,7 +27,7 @@ package fuzzy4j.aggregation.weighted;
 /**
  * Andness-directed Implicative-importance Weighted Averaging.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AIWA implements WeightedAggregation {
 

@@ -27,7 +27,7 @@ package fuzzy4j.sets;
 /**
  * Simple linear function.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class Line {
 

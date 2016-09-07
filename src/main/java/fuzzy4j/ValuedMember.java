@@ -30,7 +30,7 @@ package fuzzy4j;
  *
  * The valuedmember maintains the identity equals and hashCode of the wrapped object.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class ValuedMember<T> implements Valued {
 

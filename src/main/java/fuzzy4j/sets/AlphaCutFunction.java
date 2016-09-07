@@ -27,7 +27,7 @@ package fuzzy4j.sets;
 /**
  * Alphacut function, implements an alphacut of another function.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AlphaCutFunction implements FuzzyFunction {
 

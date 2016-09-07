@@ -38,7 +38,7 @@ import java.util.Map;
 /**
  * Implementation of a fuzzy logic controller.
  *
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class ControllerBuilder {
 

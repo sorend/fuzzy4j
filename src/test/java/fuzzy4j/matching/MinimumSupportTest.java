@@ -33,7 +33,7 @@ import static fuzzy4j.util.SimpleInterval._;
 import static junit.framework.Assert.assertEquals;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class MinimumSupportTest {
 

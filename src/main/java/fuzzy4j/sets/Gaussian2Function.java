@@ -32,7 +32,7 @@ package fuzzy4j.sets;
  *     s1 decides the support left of c.
  *     s2 decides the support right of c.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class Gaussian2Function implements FuzzyFunction {
 

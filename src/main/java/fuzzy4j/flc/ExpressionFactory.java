@@ -30,7 +30,7 @@ import fuzzy4j.aggregation.Aggregation;
 import java.util.Arrays;
 
 /**
- * @author Soren <soren@tanesha.net>
+ * @author Soren <sorend@gmail.com>
  */
 public class ExpressionFactory {
 

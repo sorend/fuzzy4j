@@ -27,7 +27,7 @@ package fuzzy4j.aggregation;
 /**
  * Aggregation operator quadratic mean (more commonly called Root Mean Square)
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class QuadraticMean implements Aggregation {
 

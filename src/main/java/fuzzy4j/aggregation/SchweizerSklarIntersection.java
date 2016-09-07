@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>I_L(p, a, b) = max(a^p + b^p - 1, 0)^(1/p)</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class SchweizerSklarIntersection implements Norm {
 

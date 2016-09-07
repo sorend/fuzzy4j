@@ -32,7 +32,7 @@ import fuzzy4j.util.ParametersUtil;
  * Defined as:
  *    <code>I_L(a, b) = min(a, b) if a+b > 1, 0 otherwise</code>
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class NilpotentMinimumIntersection implements Norm {
 

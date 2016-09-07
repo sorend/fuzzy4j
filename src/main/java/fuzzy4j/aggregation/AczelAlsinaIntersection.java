@@ -33,7 +33,7 @@ import fuzzy4j.util.ParametersUtil;
  *
  * Aczel-Alsina takes a single parameter "p" which must be in [0, inf]
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AczelAlsinaIntersection implements Norm {
 

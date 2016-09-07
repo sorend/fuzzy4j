@@ -29,7 +29,7 @@ package fuzzy4j.sets;
  *
  * (Useful for environments where java.awt is not available.
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class Point implements Comparable<Point> {
 

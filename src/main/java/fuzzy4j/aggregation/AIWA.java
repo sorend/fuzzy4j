@@ -27,7 +27,7 @@ package fuzzy4j.aggregation;
 /**
  * Andness-directed Implicative-importance Averaging (simplified without weighting)
  *
- * @author Soren A. Davidsen <soren@tanesha.net>
+ * @author Soren A. Davidsen <sorend@gmail.com>
  */
 public class AIWA implements Aggregation {
 
