@@ -29,7 +29,7 @@ import fuzzy4j.sets.*;
 import fuzzy4j.util.SimpleInterval;
 import org.junit.Test;
 
-import static fuzzy4j.util.SimpleInterval._;
+import static fuzzy4j.util.SimpleInterval.i;
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -71,7 +71,7 @@ public class MinimumSupportTest {
                 new Point(Double.POSITIVE_INFINITY, 1.0)
         );
 
-        SimpleInterval B = _(1.7, 1.8);
+        SimpleInterval B = i(1.7, 1.8);
 
         double[] necPos = support.calculate(A, B);
 
@@ -79,26 +79,26 @@ public class MinimumSupportTest {
         assertEquals(0.5,  necPos[1], 0.001);
 
         // on top
-        SimpleInterval B_2 = _(10, 11);
+        SimpleInterval B_2 = i(10, 11);
         double[] necPos_2  = support.calculate(A, B_2);
         assertEquals(1.0,  necPos_2[0], 0.001);
         assertEquals(1.0,  necPos_2[1], 0.001);
 
         // below
-        SimpleInterval B_3 = _(0, 1);
+        SimpleInterval B_3 = i(0, 1);
         double[] necPos_3  = support.calculate(A, B_3);
         assertEquals(0.0,  necPos_3[0], 0.001);
         assertEquals(1.0,  necPos_3[1], 0.001);
 
         // from below overlap
-        SimpleInterval B_4 = _(0, 1.7);
+        SimpleInterval B_4 = i(0, 1.7);
         double[] necPos_4  = support.calculate(A, B_4);
 
         assertEquals(0.0,  necPos_4[0], 0.001);
         assertEquals(0.25,  necPos_4[1], 0.001);
 
         // from top overlap
-        SimpleInterval B_5 = _(1.8, 10);
+        SimpleInterval B_5 = i(1.8, 10);
         double[] necPos_5  = support.calculate(A, B_5);
 
         assertEquals(0.5,  necPos_5[0], 0.001);

@@ -26,7 +26,7 @@ package fuzzy4j.sets;
 
 import fuzzy4j.util.SimpleInterval;
 
-import static fuzzy4j.util.SimpleInterval._;
+import static fuzzy4j.util.SimpleInterval.i;
 
 /**
  * A trapeze shaped apply function.
@@ -51,7 +51,7 @@ public class TrapezoidalFunction implements FuzzyFunction, SupportAware, CenterA
         this.b = b;
         this.c = c;
         this.d = d;
-        this.support = _(a, d);
+        this.support = i(a, d);
     }
 
     @Override
@@ -79,6 +79,6 @@ public class TrapezoidalFunction implements FuzzyFunction, SupportAware, CenterA
     }
 
     public String toString() {
-        return "_/¯\\_(" + a + ", " + b + ", " + c + ", " + d + ")";
+        return "i/¯\\i(" + a + ", " + b + ", " + c + ", " + d + ")";
     }
 }

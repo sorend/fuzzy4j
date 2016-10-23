@@ -26,7 +26,7 @@ package fuzzy4j.sets;
 
 /**
  * Implementation of cosine apply function. Note that this is not a cycling
- * cosine function, but only supports a single "top": _.-~-._
+ * cosine function, but only supports a single "top": i.-~-.i
  *
  * Alpha defines the support of the function, Beta defines the top.
  *

@@ -37,12 +37,12 @@ public class WeightedValue implements Comparable<WeightedValue> {
         WeightedValue[] r = new WeightedValue[weightValueParis.length / 2];
         int j = 0;
         for (int i = 0; i < weightValueParis.length; i += 2) {
-            r[j++] = WeightedValue._(weightValueParis[i], weightValueParis[i + 1]);
+            r[j++] = WeightedValue.w(weightValueParis[i], weightValueParis[i + 1]);
         }
         return r;
     }
 
-    public static WeightedValue _(double weight, double value) {
+    public static WeightedValue w(double weight, double value) {
         return new WeightedValue(weight, value);
     }
 

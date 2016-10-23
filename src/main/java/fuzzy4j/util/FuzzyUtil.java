@@ -29,7 +29,6 @@ import fuzzy4j.Valued;
 import fuzzy4j.aggregation.weighted.WeightedValue;
 import fuzzy4j.sets.FuzzyFunction;
 import fuzzy4j.sets.SingletonsSet;
-import fuzzy4j.sets.SupportAware;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -73,7 +72,7 @@ public class FuzzyUtil {
     public static WeightedValue[] valueMaxNormalize(double max, WeightedValue[] values) {
         WeightedValue[] tmp = new WeightedValue[values.length];
         for (int i = 0; i < values.length; i++)
-            tmp[i] = WeightedValue._(values[i].weight, values[i].value / max);
+            tmp[i] = WeightedValue.w(values[i].weight, values[i].value / max);
         return tmp;
     }
 

@@ -53,7 +53,7 @@ public class WithDefaultWeightedAggregation implements Aggregation {
 
         WeightedValue[] weightedValues = new WeightedValue[values.length];
         for (int i = 0; i < values.length; i++)
-            weightedValues[i] = WeightedValue._(weights[i], values[i]);
+            weightedValues[i] = WeightedValue.w(weights[i], values[i]);
         return inner.apply(weightedValues);
     }
 

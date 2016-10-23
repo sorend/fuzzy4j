@@ -53,7 +53,7 @@ public class WithWeightedAggregation implements Aggregation {
         int min = Math.min(values.length, weights.length);
         WeightedValue[] weightedValues = new WeightedValue[min];
         for (int i = 0; i < min; i++)
-            weightedValues[i] = WeightedValue._(weights[i], values[i]);
+            weightedValues[i] = WeightedValue.w(weights[i], values[i]);
         return inner.apply(weightedValues);
     }
 

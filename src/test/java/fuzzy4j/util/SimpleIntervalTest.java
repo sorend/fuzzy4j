@@ -28,7 +28,7 @@ package fuzzy4j.util;
 import fuzzy4j.aggregation.ArithmeticMean;
 import org.junit.Test;
 
-import static fuzzy4j.util.SimpleInterval._;
+import static fuzzy4j.util.SimpleInterval.i;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNull;
 import static junit.framework.Assert.fail;
@@ -133,8 +133,8 @@ public class SimpleIntervalTest {
     @Test
     public void testAggregate() {
 
-        impl = _(0, 10);
-        SimpleInterval si2 = _(1, 5);
+        impl = i(0, 10);
+        SimpleInterval si2 = i(1, 5);
 
         SimpleInterval si3 = impl.aggregate(ArithmeticMean.INSTANCE, si2);
 
@@ -150,15 +150,15 @@ public class SimpleIntervalTest {
     @Test
     public void testEquals() {
 
-        assertEquals(_(0, 1), _(0, 1));
-        assertFalse(_(0, 1).equals(_(0, 1.001)));
-        assertFalse(_(0.0001, 1).equals(_(0, 1)));
-        assertEquals(_(0, 1).hashCode(), _(0, 1).hashCode());
+        assertEquals(i(0, 1), i(0, 1));
+        assertFalse(i(0, 1).equals(i(0, 1.001)));
+        assertFalse(i(0.0001, 1).equals(i(0, 1)));
+        assertEquals(i(0, 1).hashCode(), i(0, 1).hashCode());
 
-        assertFalse(_(0, 1).leftExclusive().equals(_(0, 1)));
-        assertEquals(_(0, 1).leftExclusive(), _(0, 1).leftExclusive());
+        assertFalse(i(0, 1).leftExclusive().equals(i(0, 1)));
+        assertEquals(i(0, 1).leftExclusive(), i(0, 1).leftExclusive());
 
-        assertFalse(_(0, 1).rightExclusive().equals(_(0, 1)));
-        assertEquals(_(0, 1).rightExclusive(), _(0, 1).rightExclusive());
+        assertFalse(i(0, 1).rightExclusive().equals(i(0, 1)));
+        assertEquals(i(0, 1).rightExclusive(), i(0, 1).rightExclusive());
     }
 }

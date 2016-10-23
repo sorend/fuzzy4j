@@ -134,7 +134,7 @@ public class LimitedTreeSetTest {
         public String toString() {
             return "TestSimEquality{" +
                     "v='" + v + '\'' +
-                    ", w=" + w +
+                    ", i=" + w +
                     '}';
         }
 

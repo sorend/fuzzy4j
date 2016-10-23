@@ -36,7 +36,7 @@ import fuzzy4j.sets.SupportAware;
  */
 public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
 
-    public static SimpleInterval _(double start, double end) {
+    public static SimpleInterval i(double start, double end) {
         return new SimpleInterval(true, start, end, true);
     }
 
@@ -140,7 +140,7 @@ public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
      * @return
      */
     public SimpleInterval aggregate(Aggregation aggregation, SimpleInterval other) {
-        return _(aggregation.apply(min(), other.min()), aggregation.apply(max(), other.max()));
+        return i(aggregation.apply(min(), other.min()), aggregation.apply(max(), other.max()));
     }
 
     /**

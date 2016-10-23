@@ -26,7 +26,7 @@ package fuzzy4j.sets;
 
 import fuzzy4j.util.SimpleInterval;
 
-import static fuzzy4j.util.SimpleInterval._;
+import static fuzzy4j.util.SimpleInterval.i;
 
 /**
  * A triangular apply function.
@@ -62,7 +62,7 @@ public class TriangularFunction implements FuzzyFunction, SupportAware, CenterAw
         this.a = a;
         this.b = b;
         this.c = c;
-        this.support = _(a, c);
+        this.support = i(a, c);
     }
 
     @Override
