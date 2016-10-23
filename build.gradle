@@ -18,6 +18,6 @@ dependencies {
 
 // deploy to conjars
 task deploy(type: Exec, dependsOn: install) {
-  executable "echo"
-  args "${buildDir}/poms/pom-default.xml", "${buildDir}/libs/fuzzy4j.jar", "repo@conjars.org:"
+  executable "scp"
+  args "${buildDir}/poms/pom-default.xml", "${buildDir}/libs/fuzzy4j-${version}.jar", "repo@conjars.org:"
 }
