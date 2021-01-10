@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'jacoco'
 }
 
 // version
@@ -47,3 +48,10 @@ def git_version() {
 
 build.dependsOn javadocJar
 build.dependsOn sourcesJar
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}

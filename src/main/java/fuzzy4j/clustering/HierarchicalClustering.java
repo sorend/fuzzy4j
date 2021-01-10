@@ -1,28 +1,3 @@
-/*
- * Copyright (c) 2012, Søren Atmakuri Davidsen
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *
- * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
- * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-
 package fuzzy4j.clustering;
 
 import java.util.*;
@@ -74,14 +49,12 @@ public class HierarchicalClustering<V> {
      * @param B Another cluster
      */
     public static <V> double averageDistance(SimilarityMeasure<V> measure, Set<V> A, Set<V> B) {
-
-        double sum = 0.0;
+       double sum = 0.0;
         for (V x : A) {
             for (V y : B) {
                 sum += measure.distance(x, y);
             }
         }
-
         return (1.0 / (A.size() * B.size())) * sum;
     }
 
@@ -95,14 +68,16 @@ public class HierarchicalClustering<V> {
             String fA = null, fB = null;
             double min = Double.POSITIVE_INFINITY;
             double max = Double.NEGATIVE_INFINITY;
-            for (String aID : clusters.keySet()) {
-                Set<V> A = clusters.get(aID);
-                for (String bID : clusters.keySet()) {
+            for (Map.Entry<String, Set<V>> entry : clusters.entrySet()) {
+                String aID = entry.getKey();
+                Set<V> A = entry.getValue();
+                for (Map.Entry<String, Set<V>> entryB : clusters.entrySet()) {
+                    String bID = entryB.getKey();
                     // aID, bID
                     if (aID.equals(bID))
                         continue;
 
-                    Set<V> B = clusters.get(bID);
+                    Set<V> B = entryB.getValue();
 
                     double sim_A_B = averageDistance(similarityHelper, A, B);
 
@@ -119,7 +94,7 @@ public class HierarchicalClustering<V> {
                 }
             }
 
-            System.out.println("distances: min=" + min + ", max=" + max + ", maximumDistance=" + maximumDistance);
+            // System.out.println("distances: min=" + min + ", max=" + max + ", maximumDistance=" + maximumDistance);
 
             // only allow upto maximum distance
             if (min > maximumDistance)
