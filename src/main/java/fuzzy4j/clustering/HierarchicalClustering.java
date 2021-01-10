@@ -74,14 +74,12 @@ public class HierarchicalClustering<V> {
      * @param B Another cluster
      */
     public static <V> double averageDistance(SimilarityMeasure<V> measure, Set<V> A, Set<V> B) {
-
-        double sum = 0.0;
+       double sum = 0.0;
         for (V x : A) {
             for (V y : B) {
                 sum += measure.distance(x, y);
             }
         }
-
         return (1.0 / (A.size() * B.size())) * sum;
     }
 
@@ -95,14 +93,16 @@ public class HierarchicalClustering<V> {
             String fA = null, fB = null;
             double min = Double.POSITIVE_INFINITY;
             double max = Double.NEGATIVE_INFINITY;
-            for (String aID : clusters.keySet()) {
-                Set<V> A = clusters.get(aID);
-                for (String bID : clusters.keySet()) {
+            for (Map.Entry<String, Set<V>> entry : clusters.entrySet()) {
+                String aID = entry.getKey();
+                Set<V> A = entry.getValue();
+                for (Map.Entry<String, Set<V>> entryB : clusters.entrySet()) {
+                    String bID = entryB.getKey();
                     // aID, bID
                     if (aID.equals(bID))
                         continue;
 
-                    Set<V> B = clusters.get(bID);
+                    Set<V> B = entryB.getValue();
 
                     double sim_A_B = averageDistance(similarityHelper, A, B);
 
