@@ -144,5 +144,5 @@ used.
 License
 -------
 
-Fuzzy4j is licensed using the FreeBSD license.
+Fuzzy4j is licensed under MIT license.
 
