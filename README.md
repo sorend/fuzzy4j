@@ -1,5 +1,6 @@
 
-Fuzzy logic library for Java (fuzzy4j) [![Build Status](https://travis-ci.org/sorend/fuzzy4j.svg?branch=master)](https://travis-ci.org/sorend/fuzzy4j)
+Fuzzy logic library for Java (fuzzy4j) [![Build Status](https://travis-ci.org/sorend/fuzzy4j.svg?branch=master)](https://travis-ci.org/sorend/fuzzy4j) [![Release](https://jitpack.io/v/sorend/fuzzy4j.svg)]
+(https://jitpack.io/#sorend/fuzzy4j)
 ======================================
 
 Fuzzy4j is a Java library implementing many commonly used fuzzy logic functions from the areas of fuzzy sets,
@@ -17,21 +18,20 @@ Usage
 -----
 
 Source-code is available in GitHub, and can as such always be forked or cloned from https://github.com/sorend/fuzzy4j .
-The pre-built artifacts are deployed in the http://conjars.org repository. You can add this repository to your Maven
+The pre-built artifacts are deployed in the https://jitpack.io repository. You can add this repository to your Maven
 (or Maven compatible, such as Ivy or SBT) for easy inclusion:
 
     <repository>
-        <id>conjars.org</id>
-        <url>http://conjars.org/repo</url>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
     </repository>
 
-Once the repository has been added, the artifact can be included in your project as shown below. Unfortunately conjars.org
-does not support source and javadoc artifacts (yet).
+Once the repository has been added, the artifact can be included in your project as shown below:
 
     <dependency>
         <groupId>fuzzy4j</groupId>
         <artifactId>fuzzy4j</artifactId>
-        <version>1.3-SNAPSHOT</version>
+        <version>${fuzzy4j.version}</version>
     </dependency>
 
 Fuzzy sets

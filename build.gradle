@@ -1,23 +1,49 @@
-
-apply plugin: 'java'
-apply plugin: 'maven'
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
 
 // version
 group = 'fuzzy4j'
-version = '1.3-SNAPSHOT'
+version = git_version()
 
 sourceCompatibility = '1.8'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testCompile 'junit:junit:4.13.1'
+    testCompile 'junit:junit:4.13.1'
 }
 
-// deploy to conjars
-task deploy(type: Exec, dependsOn: install) {
-  executable "scp"
-  args "${buildDir}/poms/pom-default.xml", "${buildDir}/libs/fuzzy4j-${version}.jar", "repo@conjars.org:"
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
 }
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+wrapper {
+    gradleVersion = "6.8"
+}
+
+publishing {
+    publications {
+        dist(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+        }
+    }
+}
+
+def git_version() {
+    "git describe --tags --always --abbrev=5".execute().text.trim()
+}
+
+build.dependsOn javadocJar
+build.dependsOn sourcesJar
