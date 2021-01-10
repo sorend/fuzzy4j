@@ -75,7 +75,7 @@ public class AczelAlsinaIntersection implements Norm {
         // double lap = Math.pow(Math.abs(Math.log(a)), p);
         // double lbp = Math.pow(Math.abs(Math.log(b)), p);
 
-        System.out.println("lap " + lap + " lbp " + lbp);
+        // System.out.println("lap " + lap + " lbp " + lbp);
 
         return Math.exp(-Math.pow(lap + lbp, 1.0/p));
     }

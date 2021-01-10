@@ -119,7 +119,7 @@ public class HierarchicalClustering<V> {
                 }
             }
 
-            System.out.println("distances: min=" + min + ", max=" + max + ", maximumDistance=" + maximumDistance);
+            // System.out.println("distances: min=" + min + ", max=" + max + ", maximumDistance=" + maximumDistance);
 
             // only allow upto maximum distance
             if (min > maximumDistance)

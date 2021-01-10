@@ -151,9 +151,9 @@ public class MinimumSupport {
         Point A_2_B_2 = A_right.intersection(B_right);
         update(A_2_B_1, overlap, nec, pos);
 
-        System.out.println("A_left=" + A_left + ", A_right=" + A_right + ", B_left=" + B_left + ", B_right=" + B_right);
-        System.out.println("intersecting: left/left=" + A_1_B_1 + ", left/right=" + A_1_B_2 + ", " +
-                "right/left=" + A_2_B_1 + ", right/right=" + A_2_B_2);
+        // System.out.println("A_left=" + A_left + ", A_right=" + A_right + ", B_left=" + B_left + ", B_right=" + B_right);
+        // System.out.println("intersecting: left/left=" + A_1_B_1 + ", left/right=" + A_1_B_2 + ", " +
+        //         "right/left=" + A_2_B_1 + ", right/right=" + A_2_B_2);
 
         double a_pos = Collections.max(pos);
         double a_nec = Collections.min(nec);

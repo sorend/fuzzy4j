@@ -72,10 +72,10 @@ public class FuzzyCMeans {
 
         double[][] v = computeFuzzyCMeans(dataSet, c, m);
 
-        System.out.println("\nThe co-ordinates of the centers of the " + c + " clusters in the " + dataSet.get(0).vs.length + "-dimensional feature space.");
+        // System.out.println("\nThe co-ordinates of the centers of the " + c + " clusters in the " + dataSet.get(0).vs.length + "-dimensional feature space.");
 
-        for (int i = 0; i < c; i++)
-            System.out.printf("c%d=(%.2f, %.2f)\n", i, v[i][0], v[i][1]);
+        // for (int i = 0; i < c; i++)
+        //     System.out.printf("c%d=(%.2f, %.2f)\n", i, v[i][0], v[i][1]);
 
         double[] a = new double[1];
         double[] b = new double[a.length];
@@ -84,7 +84,7 @@ public class FuzzyCMeans {
             b[i] = 0.0;
         }
 
-        System.out.println("dist(a, b) = " + similarityHelper.distance(a, b));
+        // System.out.println("dist(a, b) = " + similarityHelper.distance(a, b));
     }
 
 
@@ -121,7 +121,7 @@ public class FuzzyCMeans {
             Pmark = P;
             t++;
 
-            System.out.println("\nPartitioning after the " + t + ". iteration:");
+            // System.out.println("\nPartitioning after the " + t + ". iteration:");
             printPartion(dataSet, P);
 
             // P = new double[n][2];
@@ -216,15 +216,15 @@ public class FuzzyCMeans {
         for (int i = 0; i < n; i++)
             System.out.print("\t" + dataSet.get(i).name);
 
-        System.out.println("");
+        // System.out.println("");
 
         for (int j = 0; j < f; j++) {
-            System.out.print("feature#" + j);
+            // System.out.print("feature#" + j);
 
             for (int i = 0; i < n; i++)
                 System.out.printf("\t%.2f", P[i][j]);
 
-            System.out.println("");
+            // System.out.println("");
         }
     }
 }
