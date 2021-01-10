@@ -1,6 +1,5 @@
 
-Fuzzy logic library for Java (fuzzy4j) [![Build Status](https://travis-ci.org/sorend/fuzzy4j.svg?branch=master)](https://travis-ci.org/sorend/fuzzy4j) [![Release](https://jitpack.io/v/sorend/fuzzy4j.svg)]
-(https://jitpack.io/#sorend/fuzzy4j)
+Fuzzy logic library for Java (fuzzy4j) [![Build Status](https://travis-ci.org/sorend/fuzzy4j.svg?branch=master)](https://travis-ci.org/sorend/fuzzy4j) [![Release](https://jitpack.io/v/sorend/fuzzy4j.svg)](https://jitpack.io/#sorend/fuzzy4j)
 ======================================
 
 Fuzzy4j is a Java library implementing many commonly used fuzzy logic functions from the areas of fuzzy sets,
