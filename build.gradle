@@ -4,7 +4,7 @@ plugins {
 }
 
 // version
-group = 'fuzzy4j'
+group = 'com.github.sorend'
 version = git_version()
 
 sourceCompatibility = '1.8'
