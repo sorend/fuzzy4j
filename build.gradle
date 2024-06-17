@@ -6,38 +6,29 @@ plugins {
 
 // version
 group = 'com.github.sorend'
-version = git_version()
+// version = git_version()
 
-sourceCompatibility = '1.8'
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    withSourcesJar()
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.13.2'
-}
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
+    testImplementation 'junit:junit:4.13.2'
 }
 
 wrapper {
-    gradleVersion = "6.8"
+    gradleVersion = "8.8"
 }
 
 publishing {
     publications {
         dist(MavenPublication) {
             from components.java
-            artifact sourcesJar
-            artifact javadocJar
         }
     }
 }
@@ -46,12 +37,9 @@ def git_version() {
     "git describe --tags --always --abbrev=5".execute().text.trim()
 }
 
-build.dependsOn javadocJar
-build.dependsOn sourcesJar
-
 jacocoTestReport {
     reports {
-        xml.enabled true
-        html.enabled false
+        xml.required = true
+        html.required = false
     }
 }
