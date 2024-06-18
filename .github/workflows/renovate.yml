@@ -15,6 +15,12 @@ jobs:
         uses: actions/checkout@v4.1.6
       - name: Validate Renovate JSON
         run: jq type .github/renovate.json
+      - id: create_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
         env:
@@ -23,9 +29,9 @@ jobs:
           # Onboarding not needed for self hosted
           RENOVATE_ONBOARDING: "false"
           # Username for GitHub authentication (should match GitHub App name + [bot])
-          RENOVATE_USERNAME: "fuzzy4j-renovate[bot]"
+          RENOVATE_USERNAME: "sorend-renovate-bot[bot]"
           # Git commit author used, must match GitHub App
-          RENOVATE_GIT_AUTHOR: "fuzzy4j-renovate <fuzzy4j-renovate[bot]@users.noreply.github.com>"
+          RENOVATE_GIT_AUTHOR: "sorend-renovate-bot <12314142+sorend-renovate-bot[bot]@users.noreply.github.com>"
           # Use GitHub API to create commits (this allows for signed commits from GitHub App)
           RENOVATE_PLATFORM_COMMIT: "true"
           # Override schedule if set
@@ -34,4 +40,5 @@ jobs:
         with:
           configurationFile: .github/renovate.json
           renovate-version: full
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          token: ${{ steps.create_token.outputs.token }}
+          # token: ${{ secrets.RENOVATE_TOKEN }}
