@@ -20,6 +20,7 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
+          installation_id: ${{ secrets.INSTALLATION_ID }}
 
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v40.1.12
