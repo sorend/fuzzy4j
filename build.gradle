@@ -9,7 +9,8 @@ group = 'com.github.sorend'
 // version = git_version()
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
     withSourcesJar()
 }
 
@@ -22,7 +23,7 @@ dependencies {
 }
 
 wrapper {
-    gradleVersion = "8.11"
+    gradleVersion = "9.2.1"
 }
 
 publishing {
