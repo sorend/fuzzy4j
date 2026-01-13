@@ -18,11 +18,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 wrapper {
-    gradleVersion = "8.8"
+    gradleVersion = "8.11"
 }
 
 publishing {
