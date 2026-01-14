@@ -16,7 +16,7 @@ import java.util.Map.Entry;
 public class FuzzyUtil {
 
     public static double[] doubles(Collection<Double> doubles) {
-        double[] r = new double[doubles.size()];
+        var r = new double[doubles.size()];
         int i = 0;
         for (double d : doubles)
             r[i++] = d;
@@ -28,7 +28,7 @@ public class FuzzyUtil {
     }
 
     public static String formatArray(WeightedValue[] values) {
-        StringBuilder sb = new StringBuilder("[");
+        var sb = new StringBuilder("[");
         for (int i = 0; i < values.length; i++) {
             sb.append(values[i].toString());
             if (i != 0)
@@ -40,20 +40,20 @@ public class FuzzyUtil {
     public static WeightedValue[] valueMaxNormalize(WeightedValue[] values) {
         double max = Double.NEGATIVE_INFINITY;
         for (int i = 0; i < values.length; i++)
-            max = Math.max(max, values[i].value);
+            max = Math.max(max, values[i].value());
         return valueMaxNormalize(max, values);
     }
 
     public static WeightedValue[] valueMaxNormalize(double max, WeightedValue[] values) {
-        WeightedValue[] tmp = new WeightedValue[values.length];
+        var tmp = new WeightedValue[values.length];
         for (int i = 0; i < values.length; i++)
-            tmp[i] = WeightedValue.w(values[i].weight, values[i].value / max);
+            tmp[i] = WeightedValue.w(values[i].weight(), values[i].value() / max);
         return tmp;
     }
 
 
     public static <V extends Valued> SingletonsSet<V> normalizedFold(Map<V, Double> map) {
-        final SingletonsSet<V> set = new SingletonsSet<V>();
+        final var set = new SingletonsSet<V>();
         minMaxNormalize(map, new NormalizedHandler<V>() {
             @Override
             public void normalized(V element, double value) {

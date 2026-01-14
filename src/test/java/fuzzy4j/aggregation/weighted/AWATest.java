@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -12,7 +12,7 @@ public class AWATest {
     AWA impl;
 
     @Test
-    public void compareAIWA_lt_0_5() {
+    void compareAIWA_lt_0_5() {
 
         AIWA aiwa = new AIWA(1./3.);
         impl = new AWA(1./3., 1.);
@@ -30,7 +30,7 @@ public class AWATest {
     }
 
     @Test
-    public void compareAIWA_gt_0_5() {
+    void compareAIWA_gt_0_5() {
 
         AIWA aiwa = new AIWA(2./3.);
         impl = new AWA(2./3., 1.);
@@ -49,7 +49,7 @@ public class AWATest {
 
 
     @Test
-    public void compareAMWA_lt_0_5() {
+    void compareAMWA_lt_0_5() {
 
         AMWA amwa = new AMWA(1./3.);
         impl = new AWA(1./3., 0.);
@@ -69,7 +69,7 @@ public class AWATest {
     }
 
     @Test
-    public void compareAMWA_gt_0_5() {
+    void compareAMWA_gt_0_5() {
 
         AMWA amwa = new AMWA(2./3.);
         impl = new AWA(2./3., 0.);
@@ -87,7 +87,7 @@ public class AWATest {
     }
 
     @Test
-    public void debugPow() {
+    void debugPow() {
 
         double exp = Math.pow(0.5, 0);
 

@@ -1,10 +1,10 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -14,14 +14,14 @@ public class MaximumTest {
     Maximum impl = Maximum.INSTANCE;
 
     @Test
-    public void testCreation() throws Exception {
+    void testCreation() {
         Maximum newImpl = new Maximum();
 
         assertNotNull(newImpl);
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         assertEquals(0.0, impl.apply(0, 0, 0, 0));
 
@@ -34,18 +34,18 @@ public class MaximumTest {
     }
 
     @Test
-    public void testType() throws Exception {
+    void testType() {
         assertEquals(impl.type(), Norm.Type.T_CONORM);
         assertEquals(new Maximum().type(), Norm.Type.T_CONORM);
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         assertNotNull(impl.toString());
     }
 
     @Test
-    public void testDuality() throws Exception {
+    void testDuality() {
         assertTrue(impl.duality() instanceof Minimum);
     }
 }

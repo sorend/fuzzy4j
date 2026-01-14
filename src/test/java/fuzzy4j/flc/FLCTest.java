@@ -4,7 +4,7 @@ import fuzzy4j.aggregation.AlgebraicProduct;
 import fuzzy4j.aggregation.AlgebraicSum;
 import fuzzy4j.flc.defuzzify.Centroid;
 import fuzzy4j.sets.FuzzyFunction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import static fuzzy4j.flc.HedgeBuilder.very;
 import static fuzzy4j.flc.Term.term;
 import static fuzzy4j.flc.Variable.input;
 import static fuzzy4j.flc.Variable.output;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -22,7 +22,7 @@ import static junit.framework.Assert.assertEquals;
 public class FLCTest {
 
     @Test
-    public void testBuilding() {
+    void testBuilding() {
 
         Term dark   = term("dark", 0, .25, .5);
         Term medium = term("medium", .25, .5, .75);
@@ -55,7 +55,7 @@ public class FLCTest {
     }
 
     @Test
-    public void testExample_01() throws Exception {
+    void testExample_01() {
 
         Term cold = term("cold", 10, 40, 70);
         Term ok   = term("ok", 40, 70, 100);
@@ -88,7 +88,7 @@ public class FLCTest {
     }
 
     @Test
-    public void fabioExample() {
+    void fabioExample() {
 
         Term poor = Term.term("poor", 0, 0, 4);
         Term good   = Term.term("good", 1, 4, 6, 9);
@@ -134,7 +134,7 @@ public class FLCTest {
     }
 
     @Test
-    public void testFabioExample_02() {
+    void testFabioExample_02() {
         Term poor = Term.term("poor", 0, 0, 4);
         Term good   = Term.term("good", 1, 4, 6, 9);
         Term excellent  = Term.term("excellent", 6, 9, 9);
@@ -169,7 +169,7 @@ public class FLCTest {
     }
 
     @Test
-    public void testExample_hedges() throws Exception {
+    void testExample_hedges() {
 
         Term low    = term("low", 0, 36.0, 37.25);
         Term normal = term("normal", 36.0, 37.25, 38.5);

@@ -1,10 +1,10 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -13,14 +13,15 @@ public class GeometricMeanTest {
 
     GeometricMean impl = GeometricMean.INSTANCE;
 
-    public void testCalc_none() {
+    @Test
+    void testCalc_none() {
         assertEquals(Double.NaN, impl.apply(null));
         assertEquals(Double.NaN, impl.apply());
         assertEquals(0.5, impl.apply(0.5));
     }
 
     @Test
-    public void testCalc_lower() throws Exception {
+    void testCalc_lower() {
 
         double val = impl.apply(0.0, 0.0);
         assertEquals(0.0, val);
@@ -30,14 +31,14 @@ public class GeometricMeanTest {
     }
 
     @Test
-    public void testCalc_upper() throws Exception {
+    void testCalc_upper() {
 
         double val = impl.apply(1.0, 1.0);
         assertEquals(1.0, val);
     }
 
     @Test
-    public void testCalc_01() throws Exception {
+    void testCalc_01() {
 
         double val = impl.apply(1.0, 0.0);
         assertTrue(val < 0.5);
@@ -49,13 +50,13 @@ public class GeometricMeanTest {
     }
 
     @Test
-    public void testType() throws Exception {
+    void testType() {
         assertEquals(Norm.Type.UNKNOWN, impl.type());
         assertEquals(Norm.Type.UNKNOWN, impl.duality().type());
     }
 
     @Test
-    public void testDuality() throws Exception {
+    void testDuality() {
 
         Norm dual = impl.duality();
 
@@ -67,7 +68,7 @@ public class GeometricMeanTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         assertNotNull(impl.toString());
     }
 }

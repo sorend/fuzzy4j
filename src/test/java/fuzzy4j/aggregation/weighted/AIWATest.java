@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -13,10 +13,9 @@ public class AIWATest {
 
     /**
      * Test from notes.
-     * @throws Exception
      */
     @Test
-    public void testCalc_Notes() throws Exception {
+    void testCalc_Notes() {
 
         impl = new AIWA(2./3.);
 
@@ -30,7 +29,7 @@ public class AIWATest {
 
 
     @Test
-    public void extremes_One() throws Exception {
+    void extremes_One() {
 
         impl = new AIWA(1.0);
 
@@ -42,7 +41,7 @@ public class AIWATest {
     }
 
     @Test
-    public void extremes_Zero() throws Exception {
+    void extremes_Zero() {
 
         impl = new AIWA(0.0);
 

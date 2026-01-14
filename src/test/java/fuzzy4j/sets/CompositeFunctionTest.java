@@ -2,9 +2,9 @@ package fuzzy4j.sets;
 
 import fuzzy4j.aggregation.AlgebraicProduct;
 import fuzzy4j.aggregation.Minimum;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -14,7 +14,7 @@ public class CompositeFunctionTest {
     CompositeFunction impl;
 
     @Test
-    public void testMembership_01() throws Exception {
+    void testMembership_01() {
 
         ConstantFunction f1 = new ConstantFunction(0.5);
         TriangularFunction f2 = new TriangularFunction(0.0, 1.0, 2.0);
@@ -28,7 +28,7 @@ public class CompositeFunctionTest {
     }
 
     @Test
-    public void testMembership_02() throws Exception {
+    void testMembership_02() {
 
         ConstantFunction f1 = new ConstantFunction(0.5);
         TriangularFunction f2 = new TriangularFunction(0.0, 1.0, 2.0);

@@ -1,10 +1,10 @@
 package fuzzy4j;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotSame;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -14,7 +14,7 @@ public class ValuedMemberTest {
     ValuedMember<String> impl;
 
     @Test
-    public void testTheStuff() throws Exception {
+    void testTheStuff() {
 
         impl = new ValuedMember<String>("test", 1.0);
 

@@ -3,11 +3,11 @@ package fuzzy4j.flc;
 import fuzzy4j.aggregation.Aggregation;
 import fuzzy4j.aggregation.Maximum;
 import fuzzy4j.aggregation.Minimum;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -21,8 +21,8 @@ public class RuleBuilderTest {
     Term term2;
     RuleBuilder impl;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() {
         contr = ControllerBuilder.newBuilder();
         term1 = Term.term("low", 0, 5, 10);
         term2 = Term.term("high", 5, 10, 15);
@@ -32,7 +32,7 @@ public class RuleBuilderTest {
     }
 
     @Test
-    public void testBasic() throws Exception {
+    void testBasic() {
 
         impl.var(input).is(term1).then().var(out).is(term2);
 
@@ -45,7 +45,7 @@ public class RuleBuilderTest {
     }
 
     @Test
-    public void testBasic_or() throws Exception {
+    void testBasic_or() {
 
         impl.var(input).is(term1).or().var(input).is(term2).then().var(out).is(term2);
 
@@ -68,7 +68,7 @@ public class RuleBuilderTest {
 
             @Override
             public double valueOf(Variable variable, Term label) {
-                return label.set.apply(instance.get(variable));
+                return label.set().apply(instance.get(variable));
             }
         };
 
@@ -81,7 +81,7 @@ public class RuleBuilderTest {
 
 
     @Test
-    public void testBasic_and() throws Exception {
+    void testBasic_and() {
 
         impl.var(input).is(term1).and().var(input).is(term2).then().var(out).is(term2);
 
@@ -104,7 +104,7 @@ public class RuleBuilderTest {
 
             @Override
             public double valueOf(Variable variable, Term label) {
-                return label.set.apply(instance.get(variable));
+                return label.set().apply(instance.get(variable));
             }
         };
 

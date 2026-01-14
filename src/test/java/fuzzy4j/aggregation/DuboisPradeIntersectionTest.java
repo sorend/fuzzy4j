@@ -1,10 +1,10 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -14,7 +14,7 @@ public class DuboisPradeIntersectionTest {
     DuboisPradeIntersection impl;
 
     @Test
-    public void testFactory() {
+    void testFactory() {
 
         impl = DuboisPradeIntersection.FACTORY.create(0);
 
@@ -38,7 +38,7 @@ public class DuboisPradeIntersectionTest {
     }
 
     @Test
-    public void testCreate() {
+    void testCreate() {
         impl = new DuboisPradeIntersection(0);
         impl = new DuboisPradeIntersection(1);
 
@@ -57,7 +57,7 @@ public class DuboisPradeIntersectionTest {
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = new DuboisPradeIntersection(0);
 
@@ -78,13 +78,13 @@ public class DuboisPradeIntersectionTest {
     }
 
     @Test
-    public void testType() throws Exception {
+    void testType() {
         impl = new DuboisPradeIntersection(0);
         assertEquals(Norm.Type.T_NORM, impl.type());
     }
 
     @Test
-    public void testDuality() throws Exception {
+    void testDuality() {
         impl = new DuboisPradeIntersection(0);
         assertEquals(Norm.Type.T_NORM, impl.type());
         Norm dual = impl.duality();
@@ -99,7 +99,7 @@ public class DuboisPradeIntersectionTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         impl = new DuboisPradeIntersection(0);
         assertNotNull(impl.toString());
     }

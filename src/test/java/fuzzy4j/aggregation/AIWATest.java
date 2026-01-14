@@ -1,10 +1,10 @@
 package fuzzy4j.aggregation;
 
 import fuzzy4j.aggregation.weighted.WeightedValue;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -14,7 +14,7 @@ public class AIWATest {
     AIWA impl;
 
     @Test
-    public void testParametricFactory() throws Exception {
+    void testParametricFactory() {
 
         impl = AIWA.FACTORY.create(0.5);
 
@@ -55,10 +55,9 @@ public class AIWATest {
 
     /**
      * Test from notes.
-     * @throws Exception
      */
     @Test
-    public void testCalc_same_as_weighted() throws Exception {
+    void testCalc_same_as_weighted() {
 
         impl = new AIWA(2./3.);
 
@@ -75,7 +74,7 @@ public class AIWATest {
     }
 
     @Test
-    public void testCalc_p_morethan_0_5() throws Exception {
+    void testCalc_p_morethan_0_5() {
 
         impl = new AIWA(2./3.);
 
@@ -87,7 +86,7 @@ public class AIWATest {
     }
 
     @Test
-    public void testCalc_p_lessthan_0_5() throws Exception {
+    void testCalc_p_lessthan_0_5() {
 
         impl = new AIWA(1./3.);
 

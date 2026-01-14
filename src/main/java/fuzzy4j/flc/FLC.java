@@ -65,7 +65,7 @@ public class FLC {
                 if (v == null)
                     return 0.0;
                 else
-                    return label.set.apply(v);
+                    return label.set().apply(v);
             }
 
             @Override
@@ -98,7 +98,7 @@ public class FLC {
                 // add the bounded set to the outputs.
                 varOutput.get(rule.then.variable)
                         .add(new CompositeFunction(activationNorm,
-                                rule.then.value.set,
+                                rule.then.value.set(),
                                 new ConstantFunction(firingStrength)));
             }
         }

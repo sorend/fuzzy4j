@@ -1,13 +1,13 @@
 package fuzzy4j.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren <sorend@gmail.com>
@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertTrue;
 public class LimitedTreeSetTest {
 
     @Test
-    public void testAdd() throws Exception {
+    void testAdd() {
 
         LimitedTreeSet impl = new LimitedTreeSet(2);
 
@@ -41,7 +41,7 @@ public class LimitedTreeSetTest {
 
 
     @Test
-    public void testAdd_ReverseSimilarities() throws Exception {
+    void testAdd_ReverseSimilarities() {
 
         LimitedTreeSet impl = new LimitedTreeSet(2);
 

@@ -29,20 +29,20 @@ public class MinimumSupport {
         if (p == null)
             return;
 
-        if (!(0 < p.y && p.y < 1)) // outside the unit interval, meaning outside of fuzzy function def.
+        if (!(0 < p.y() && p.y() < 1)) // outside unit interval, meaning outside of fuzzy function def.
             return;
 
-        if (!overlap.within(p.x)) // intersection is outside the overlap, we don't care about it.
+        if (!overlap.within(p.x())) // intersection is outside overlap, we don't care about it.
             return;
 
         // update necessity
-        nec.add(p.y);
-        pos.add(p.y);
+        nec.add(p.y());
+        pos.add(p.y());
     }
 
     public void updateNecPos(List<Double> pos, List<Double> nec, Point p, FuzzyFunction B) {
-        pos.add(Math.min(p.y, B.apply(p.x)));
-        nec.add(Math.max(p.y, 1.0 - B.apply(p.x)));
+        pos.add(Math.min(p.y(), B.apply(p.x())));
+        nec.add(Math.max(p.y(), 1.0 - B.apply(p.x())));
     }
 
     public double[] calculate(PointsLinearFunction A, SimpleInterval B) {

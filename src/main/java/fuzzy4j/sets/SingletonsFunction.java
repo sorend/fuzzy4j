@@ -34,8 +34,8 @@ public class SingletonsFunction implements FuzzyFunction, SupportAware {
     @Override
     public double apply(double x) {
         for (int i = 0; i < elements.length; i++)
-            if (elements[i].x == x)
-                return elements[i].y;
+            if (elements[i].x() == x)
+                return elements[i].y();
         return defaultValue;
     }
 
@@ -43,8 +43,8 @@ public class SingletonsFunction implements FuzzyFunction, SupportAware {
     public SimpleInterval support() {
         double min = Double.POSITIVE_INFINITY, max = Double.NEGATIVE_INFINITY;
         for (Point p : elements) {
-            min = Math.min(p.x, min);
-            max = Math.max(p.x, max);
+            min = Math.min(p.x(), min);
+            max = Math.max(p.x(), max);
         }
         return new SimpleInterval(true, min, max, true);
     }

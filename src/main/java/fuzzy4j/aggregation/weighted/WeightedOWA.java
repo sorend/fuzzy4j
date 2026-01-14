@@ -41,7 +41,7 @@ public class WeightedOWA implements WeightedAggregation {
             double s = 0.0;
             double R_exp = l * ((2 * p) - 1.);
             for (int i = 0; i < min; i++) {
-                double I_R = 1. - Math.pow(values[i].weight, R_exp) * (1. - values[i].value);
+                double I_R = 1. - Math.pow(values[i].weight(), R_exp) * (1. - values[i].value());
                 s += weights[i] * I_R;
             }
             return s;
@@ -50,7 +50,7 @@ public class WeightedOWA implements WeightedAggregation {
             double s = 0.0;
             double R_exp = l * ((2 * (1. - p)) - 1.);
             for (int i = 0; i < min; i++) {
-                double I_R = 1. - Math.pow(values[i].weight, R_exp) * values[i].value;
+                double I_R = 1. - Math.pow(values[i].weight(), R_exp) * values[i].value();
                 s += weights[i] * I_R;
             }
             return s;

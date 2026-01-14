@@ -2,10 +2,10 @@ package fuzzy4j.matching;
 
 import fuzzy4j.sets.*;
 import fuzzy4j.util.SimpleInterval;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static fuzzy4j.util.SimpleInterval.i;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren <sorend@gmail.com>
@@ -13,7 +13,7 @@ import static junit.framework.Assert.assertEquals;
 public class MinimumSupportTest {
 
     @Test
-    public void calculate_Triangular_Triangular() throws Exception {
+    void calculate_Triangular_Triangular() {
 
         MinimumSupport support = new MinimumSupport();
 
@@ -35,7 +35,7 @@ public class MinimumSupportTest {
 
 
     @Test
-    public void calculate_PointsLinear_Interval() throws Exception {
+    void calculate_PointsLinear_Interval() {
 
 
         MinimumSupport support = new MinimumSupport();
@@ -82,7 +82,7 @@ public class MinimumSupportTest {
     }
 
     @Test
-    public void calculate_Interval_Triangular() throws Exception {
+    void calculate_Interval_Triangular() {
 
         MinimumSupport support = new MinimumSupport();
 

@@ -16,8 +16,8 @@ public class WeightedArithmeticMean implements WeightedAggregation {
 
         double s = 0.0, ws = 0.0;
         for (int i = 0; i < values.length; i++) {
-            s += values[i].value * values[i].weight;
-            ws += values[i].weight;
+            s += values[i].value() * values[i].weight();
+            ws += values[i].weight();
         }
 
         return s / ws;

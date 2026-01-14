@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -12,7 +12,7 @@ public class AMWATest {
     AMWA impl;
 
     @Test
-    public void testCalc_p_gt_0_5() {
+    void testCalc_p_gt_0_5() {
 
         impl = new AMWA(2./3.);
 
@@ -29,7 +29,7 @@ public class AMWATest {
     }
 
     @Test
-    public void testCalc_p_lt_0_5() {
+    void testCalc_p_lt_0_5() {
 
         impl = new AMWA(1./3.);
 

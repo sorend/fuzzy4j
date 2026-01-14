@@ -5,20 +5,12 @@ package fuzzy4j.sets;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class Line {
+public record Line(double m, double b) {
 
     public static Line fromPoints(Point p_a, Point p_b) {
-        double m = (p_b.y - p_a.y) / (p_b.x - p_a.x);
-        double b = p_a.y - (m * p_a.x);
+        double m = (p_b.y() - p_a.y()) / (p_b.x() - p_a.x());
+        double b = p_a.y() - (m * p_a.x());
         return new Line(m, b);
-    }
-
-    public final double m;
-    public final double b;
-
-    public Line(double m, double b) {
-        this.m = m;
-        this.b = b;
     }
 
     public Point intersection(Line B) {
@@ -41,6 +33,7 @@ public class Line {
         return m < 0.0;
     }
 
+    @Override
     public String toString() {
         return String.format("%fx+%f", m, b);
     }

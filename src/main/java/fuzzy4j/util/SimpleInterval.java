@@ -158,9 +158,7 @@ public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        SimpleInterval that = (SimpleInterval) o;
+        if (!(o instanceof SimpleInterval that)) return false;
 
         if (leftInclusive != that.leftInclusive) return false;
         if (Double.compare(that.max, max) != 0) return false;

@@ -145,7 +145,7 @@ public class OWA implements Aggregation {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        var sb = new StringBuilder();
         for (int i = 0; i < weights.length; i++)
             sb.append(" " + weights[i]);
         return "OWA{" +

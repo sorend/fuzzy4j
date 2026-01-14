@@ -1,10 +1,10 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -14,7 +14,7 @@ public class QuadraticMeanTest {
     QuadraticMean impl = QuadraticMean.INSTANCE;
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         assertEquals(Double.NaN, impl.apply());
         assertEquals(Double.NaN, impl.apply(null));
@@ -25,7 +25,7 @@ public class QuadraticMeanTest {
     }
 
     @Test
-    public void testApply_02() throws Exception {
+    void testApply_02() {
 
         // 0, 0.2, 0.9 = 1/3 * (0*0 + 0.2*0.2 + 0.9*0.9) = 1/3 * (0 + 0.04 + 0.81) = 0.85 / 3 = 0.28333
         // sqrt = 0.53229
@@ -34,7 +34,7 @@ public class QuadraticMeanTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         assertNotNull(impl.toString());
         assertTrue(impl.toString().contains("h_"));
     }

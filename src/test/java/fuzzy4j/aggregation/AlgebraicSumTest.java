@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A Davidsen <sorend@gmail.com>
@@ -11,7 +11,7 @@ public class AlgebraicSumTest {
 
 
     @Test
-    public void checkImpl() {
+    void checkImpl() {
 
         Aggregation aggr = AlgebraicSum.INSTANCE;
 

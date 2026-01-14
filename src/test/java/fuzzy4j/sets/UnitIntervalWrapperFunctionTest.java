@@ -1,8 +1,8 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -12,7 +12,7 @@ public class UnitIntervalWrapperFunctionTest {
     UnitIntervalWrapperFunction impl;
 
     @Test
-    public void testMembership_max() throws Exception {
+    void testMembership_max() {
 
         FuzzyFunction ff = new FuzzyFunction() {
             @Override
@@ -32,7 +32,7 @@ public class UnitIntervalWrapperFunctionTest {
     }
 
     @Test
-    public void testMembership_min() throws Exception {
+    void testMembership_min() {
 
         FuzzyFunction ff = new FuzzyFunction() {
             @Override

@@ -15,8 +15,8 @@ public class WeightedGeometricMean implements WeightedAggregation {
     public double apply(WeightedValue... values) {
         double n = 0.0, d = 0.0;
         for (int i = 0; i < values.length; i++) {
-            n += values[i].weight * Math.log(values[i].value);
-            d += values[i].weight;
+            n += values[i].weight() * Math.log(values[i].value());
+            d += values[i].weight();
         }
         return Math.exp(n / d);
     }

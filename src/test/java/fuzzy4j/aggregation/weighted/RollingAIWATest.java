@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static fuzzy4j.aggregation.weighted.WeightedValue.w;
 
 /**
@@ -14,10 +14,9 @@ public class RollingAIWATest {
 
     /**
      * Test from notes.
-     * @throws Exception
      */
     @Test
-    public void testCalc_Notes() throws Exception {
+    void testCalc_Notes() {
 
         impl = new RollingAIWA(2./3.);
 

@@ -20,13 +20,13 @@ public class AMWA implements WeightedAggregation {
 
         double s_w = 0.0;
         for (int i = 0; i < values.length; i++)
-            s_w += values[i].weight;
+            s_w += values[i].weight();
 
         if (p <= .5) {
             double s = 0.0;
             for (int i = 0; i < values.length; i++) {
-                double y_i = values[i].weight / s_w;
-                s += y_i * Math.pow(values[i].value, alpha);
+                double y_i = values[i].weight() / s_w;
+                s += y_i * Math.pow(values[i].value(), alpha);
             }
             return Math.pow(s, 1. / alpha);
         }
@@ -34,8 +34,8 @@ public class AMWA implements WeightedAggregation {
             double s = 0.0;
             double a2 = p / (1. - p);
             for (int i = 0; i < values.length; i++) {
-                double y_i = values[i].weight / s_w;
-                s += y_i * Math.pow(1. - values[i].value, a2);
+                double y_i = values[i].weight() / s_w;
+                s += y_i * Math.pow(1. - values[i].value(), a2);
             }
             return 1. - Math.pow(s, 1. / a2);
         }

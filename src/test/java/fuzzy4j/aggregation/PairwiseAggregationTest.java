@@ -1,9 +1,9 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -13,7 +13,7 @@ public class PairwiseAggregationTest {
     PairwiseAggregation impl;
 
     @Test
-    public void testWrap_factory() throws Exception {
+    void testWrap_factory() {
 
         ParametricFactory<Aggregation> factory = PairwiseAggregation.wrap_factory(PowerMean.FACTORY);
 
@@ -26,7 +26,7 @@ public class PairwiseAggregationTest {
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         PairwiseAggregation aggr = new PairwiseAggregation(AlgebraicProduct.INSTANCE);
 

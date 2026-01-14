@@ -1,9 +1,9 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -12,7 +12,8 @@ public class MinMaxTest {
 
     MinMax impl;
 
-    public void testFACTORY() {
+    @Test
+    void testFACTORY() {
 
         impl = MinMax.FACTORY.create(0.0);
         impl = MinMax.FACTORY.create(1.0);
@@ -41,7 +42,7 @@ public class MinMaxTest {
     }
 
     @Test
-    public void testBasics() {
+    void testBasics() {
 
         impl = MinMax.MIDRANGE;
 
@@ -62,7 +63,7 @@ public class MinMaxTest {
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = MinMax.FACTORY.create(1.0);
 

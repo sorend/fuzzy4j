@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -12,7 +12,7 @@ public class TruncatedMeanTest {
     TruncatedMean impl;
 
     @Test
-    public void testCreation() {
+    void testCreation() {
         try {
             TruncatedMean.BY_PERCENTILE.create();
             fail();
@@ -52,7 +52,7 @@ public class TruncatedMeanTest {
     }
 
     @Test
-    public void testApply_basic() throws Exception {
+    void testApply_basic() {
 
         impl = new TruncatedMean(0.25, 0.75);
 
@@ -65,7 +65,7 @@ public class TruncatedMeanTest {
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = new TruncatedMean(0.25, 0.75);
 
@@ -75,7 +75,7 @@ public class TruncatedMeanTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         impl = new TruncatedMean(0.25, 0.75);
         assertNotNull(impl.toString());
         assertTrue(impl.toString().contains("h_"));

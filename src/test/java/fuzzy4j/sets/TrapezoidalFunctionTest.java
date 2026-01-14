@@ -1,18 +1,18 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * @author Soren <sorend@gmail.com>
  */
 public class TrapezoidalFunctionTest {
 
     TrapezoidalFunction impl;
 
     @Test
-    public void testMembership() throws Exception {
+    void testMembership() {
 
         impl = new TrapezoidalFunction(10, 20, 30, 40);
 

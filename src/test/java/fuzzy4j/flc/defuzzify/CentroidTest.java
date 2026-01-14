@@ -2,10 +2,10 @@ package fuzzy4j.flc.defuzzify;
 
 import fuzzy4j.flc.Variable;
 import fuzzy4j.sets.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static fuzzy4j.sets.Point.$;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -16,7 +16,7 @@ public class CentroidTest {
     Variable var = Variable.output("hello");
 
     @Test
-    public void testExample_01_Triangular() {
+    void testExample_01_Triangular() {
 
         TriangularFunction set = new TriangularFunction(0, 5, 10);
         var.start(0).end(10);
@@ -27,7 +27,7 @@ public class CentroidTest {
     }
 
     @Test
-    public void testExample_02_Trapezoidal() {
+    void testExample_02_Trapezoidal() {
 
         TrapezoidalFunction set = new TrapezoidalFunction(0, 5, 10, 15);
         var.start(0).end(15);
@@ -38,7 +38,7 @@ public class CentroidTest {
     }
 
     @Test
-    public void testExample_03_Composite() {
+    void testExample_03_Composite() {
 
         // example taken from:
         // http://www.intelligent-systems.info/classes/ee509/9.PDF

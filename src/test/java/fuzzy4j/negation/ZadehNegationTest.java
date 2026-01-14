@@ -2,10 +2,10 @@ package fuzzy4j.negation;
 
 import fuzzy4j.sets.FuzzyFunction;
 import fuzzy4j.sets.TriangularFunction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -17,7 +17,7 @@ public class ZadehNegationTest {
     FuzzyFunction ff = new TriangularFunction(0, 1, 2);
 
     @Test
-    public void testNegation_01() {
+    void testNegation_01() {
 
         impl = new ZadehNegation(ff);
 
@@ -31,7 +31,7 @@ public class ZadehNegationTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         impl = new ZadehNegation(ff);
         assertNotNull(impl.toString());
     }

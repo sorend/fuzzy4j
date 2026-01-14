@@ -1,12 +1,12 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -16,7 +16,7 @@ public class PowerMeanTest {
     PowerMean impl;
 
     @Test
-    public void testParametricFactory() throws Exception {
+    void testParametricFactory() {
 
         impl = PowerMean.FACTORY.create(1.0);
 
@@ -44,7 +44,7 @@ public class PowerMeanTest {
     }
 
     @Test
-    public void testApply_basic() throws Exception {
+    void testApply_basic() {
 
         impl = PowerMean.FACTORY.create(0.5);
 
@@ -58,7 +58,7 @@ public class PowerMeanTest {
 
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = new PowerMean(1.0);
 
@@ -77,7 +77,7 @@ public class PowerMeanTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
 
     }
 }

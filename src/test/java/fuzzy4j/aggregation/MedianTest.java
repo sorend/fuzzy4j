@@ -1,9 +1,9 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -13,7 +13,7 @@ public class MedianTest {
     Median impl = Median.INSTANCE;
 
     @Test
-    public void testApply_01() {
+    void testApply_01() {
 
         assertEquals(Double.NaN, impl.apply());
         assertEquals(Double.NaN, impl.apply(null));
@@ -29,7 +29,7 @@ public class MedianTest {
     }
 
     @Test
-    public void testApply_02() {
+    void testApply_02() {
 
         assertEquals(0.5, impl.apply(0.0, 1.0));
 
@@ -40,7 +40,7 @@ public class MedianTest {
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         assertNotNull(impl.toString());
     }
 }

@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -12,7 +12,7 @@ public class DombiIntersectionTest {
     Norm impl;
 
     @Test
-    public void testCalc() throws Exception {
+    void testCalc() {
 
         impl = DombiIntersection.BY_EXPONENT.create(0.9);
 

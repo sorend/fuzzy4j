@@ -1,9 +1,9 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -13,7 +13,7 @@ public class CosineFunctionTest {
     CosineFunction impl;
 
     @Test
-    public void membership_outside() {
+    void membership_outside() {
         impl = new CosineFunction(1.0, 1.0);
 
         assertEquals(0.0, impl.apply(10));
@@ -21,7 +21,7 @@ public class CosineFunctionTest {
     }
 
     @Test
-    public void testMembership_01() throws Exception {
+    void testMembership_01() {
 
         impl = new CosineFunction(1.0, 1.0);
 
@@ -31,7 +31,7 @@ public class CosineFunctionTest {
     }
 
     @Test
-    public void testMembership_02() throws Exception {
+    void testMembership_02() {
 
         impl = new CosineFunction(2.0, 5.0);
 

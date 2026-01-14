@@ -5,7 +5,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class WeightedValue implements Comparable<WeightedValue> {
+public record WeightedValue(double weight, double value) implements Comparable<WeightedValue> {
 
     public static WeightedValue[] pairs(double... weightValueParis) {
         if (weightValueParis.length % 2 != 0)
@@ -22,21 +22,13 @@ public class WeightedValue implements Comparable<WeightedValue> {
         return new WeightedValue(weight, value);
     }
 
-    public final double value;
-    public final double weight;
-
-    public WeightedValue(double weight, double value) {
-        this.weight = weight;
-        this.value = value;
-    }
-
     @Override
     public int compareTo(WeightedValue o) {
         return Double.compare(this.weight, o.weight);
     }
 
+    @Override
     public String toString() {
         return String.format("(%.5f, %.5f)", weight, value);
-        // return "(" + weight + ", " + value + ")";
     }
 }

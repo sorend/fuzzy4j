@@ -1,9 +1,9 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -13,7 +13,7 @@ public class ArithmeticMeanTest {
     ArithmeticMean impl = ArithmeticMean.INSTANCE;
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         assertEquals(Double.NaN, impl.apply(null));
         assertEquals(Double.NaN, impl.apply());
@@ -28,7 +28,7 @@ public class ArithmeticMeanTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         assertNotNull(impl.toString());
     }
 }

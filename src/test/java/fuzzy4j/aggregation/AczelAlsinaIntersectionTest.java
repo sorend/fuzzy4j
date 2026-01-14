@@ -1,9 +1,9 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -13,7 +13,7 @@ public class AczelAlsinaIntersectionTest {
     AczelAlsinaIntersection impl;
 
     @Test
-    public void testApply_p_0() throws Exception {
+    void testApply_p_0() {
 
         impl = new AczelAlsinaIntersection(0);
     }

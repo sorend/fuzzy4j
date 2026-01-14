@@ -1,6 +1,6 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -10,7 +10,7 @@ public class WeightedOWATest {
     WeightedOWA impl;
 
     @Test
-    public void simpleTests() {
+    void simpleTests() {
 
         // p = 0.3.., lambda=0.0, weights=( 1.0 )
         impl = new WeightedOWA(1./3., 1., 1.);

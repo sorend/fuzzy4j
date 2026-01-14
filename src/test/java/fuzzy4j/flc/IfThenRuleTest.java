@@ -1,9 +1,9 @@
 package fuzzy4j.flc;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -18,7 +18,7 @@ public class IfThenRuleTest {
     Expression expression = ExpressionFactory.is(input, low);
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
 
         // very simple class, so very simple test ..
 

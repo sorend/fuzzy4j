@@ -1,14 +1,14 @@
 package fuzzy4j.util;
 
 import fuzzy4j.aggregation.ArithmeticMean;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static fuzzy4j.util.SimpleInterval.i;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.fail;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -18,7 +18,7 @@ public class SimpleIntervalTest {
     SimpleInterval impl;
 
     @Test
-    public void testParse() throws Exception {
+    void testParse() {
 
         impl = SimpleInterval.parse("[0, 1]");
         assertTrue(impl.within(0.0));
@@ -54,7 +54,7 @@ public class SimpleIntervalTest {
     }
 
     @Test
-    public void testLeftExclusive() throws Exception {
+    void testLeftExclusive() {
 
         impl = new SimpleInterval(true, 0.0, 1.0, true);
 
@@ -69,7 +69,7 @@ public class SimpleIntervalTest {
     }
 
     @Test
-    public void testRightExclusive() throws Exception {
+    void testRightExclusive() {
         impl = new SimpleInterval(true, 0.0, 1.0, true);
 
         assertTrue(impl.within(1.0));
@@ -83,7 +83,7 @@ public class SimpleIntervalTest {
     }
 
     @Test
-    public void testWithin_Inf() throws Exception {
+    void testWithin_Inf() {
 
         impl = new SimpleInterval(true, Double.NEGATIVE_INFINITY, 0.0, true);
 

@@ -1,9 +1,9 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by sorend on 22/3/14.
@@ -12,13 +12,15 @@ public class PiFunctionTest {
 
     PiFunction impl;
 
-    public void print() {
+    @Test
+    void print() {
+        impl = new PiFunction(1, 2, 4, 2.0);
         PiFunction f = impl;
         System.out.println("a " + f.a + ", p " + f.p + ", r " + f.r + ", q " + f.q + ", b " + f.b);
     }
 
     @Test
-    public void testApply_01() throws Exception {
+    void testApply_01() {
 
         impl = new PiFunction(1, 2, 4, 2.0);
 
@@ -42,7 +44,7 @@ public class PiFunctionTest {
     }
 
     @Test
-    public void testCenter() throws Exception {
+    void testCenter() {
         impl = new PiFunction(1, 2, 3, 2.0);
 
         assertEquals(2.0, impl.center());

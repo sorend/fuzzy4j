@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -10,7 +10,7 @@ import static junit.framework.Assert.assertEquals;
 public class DombiUnionTest {
 
     @Test
-    public void checkDrasticality() {
+    void checkDrasticality() {
 
         DombiUnion max = DombiUnion.BY_DRASTICALITY.create(0.0);
 
