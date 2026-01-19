@@ -75,7 +75,7 @@ public class DombiUnion implements Norm {
 
     @Override
     public Norm duality() {
-        return DombiIntersection.BY_EXPONENT.create(p);
+        return fuzzy4j.algebra.Norms.asNorm(fuzzy4j.algebra.Norms.dombi(p));
     }
 
     @Override

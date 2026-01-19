@@ -41,6 +41,6 @@ public class EinsteinUnion implements Norm {
      */
     @Override
     public Norm duality() {
-        return EinsteinIntersection.INSTANCE;
+        return fuzzy4j.algebra.Norms.asNorm(fuzzy4j.algebra.Norms.einstein());
     }
 }

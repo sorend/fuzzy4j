@@ -38,6 +38,6 @@ public class LukasiewiczUnion implements Norm {
      */
     @Override
     public Norm duality() {
-        return LukasiewiczIntersection.INSTANCE;
+        return fuzzy4j.algebra.Norms.asNorm(fuzzy4j.algebra.Norms.lukasiewicz());
     }
 }
