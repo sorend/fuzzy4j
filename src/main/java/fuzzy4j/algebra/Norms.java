@@ -14,7 +14,7 @@ public class Norms {
         
         @Override
         public double s(double a, double b) {
-            return 1.0 - tnorm.t(a, b);
+            return 1.0 - tnorm.t(1.0 - a, 1.0 - b);
         }
     }
     
