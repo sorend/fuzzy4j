@@ -1,7 +1,7 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.AlgebraicProduct;
 import fuzzy4j.aggregation.AlgebraicSum;
+import fuzzy4j.algebra.Norms;
 import fuzzy4j.flc.defuzzify.Centroid;
 import fuzzy4j.sets.FuzzyFunction;
 import org.junit.jupiter.api.Test;
@@ -73,7 +73,7 @@ public class FLCTest {
                 .when().var(room).is(cold).then().var(effort).is(high)
                 .when().var(room).is(ok).then().var(effort).is(medi)
                 .when().var(room).is(hot).then().var(effort).is(low)
-                .activationFunction(AlgebraicProduct.INSTANCE)
+                .activationFunction(Norms.asAggregation(Norms.algebraicProduct()))
                 .accumulationFunction(AlgebraicSum.INSTANCE)
                 .defuzzifier(new Centroid())
                 .create();
@@ -154,7 +154,7 @@ public class FLCTest {
 
         FLC impl = ControllerBuilder.newBuilder()
                 .when().var(service).is(poor).and().var(food).is(rancid).then().var(tip).is(cheap)
-                .activationFunction(AlgebraicProduct.INSTANCE)
+                .activationFunction(Norms.asAggregation(Norms.algebraicProduct()))
                 .accumulationFunction(AlgebraicSum.INSTANCE)
                 .defuzzifier(new Centroid())
                 .create();

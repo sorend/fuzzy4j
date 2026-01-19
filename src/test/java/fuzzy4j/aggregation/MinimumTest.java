@@ -23,18 +23,18 @@ public class MinimumTest {
         assertEquals(0.0, impl.apply(0.2, 0.0, 0.4));
     }
 
-    @Test
-    void testType() {
-        assertEquals(impl.type(), Norm.Type.T_NORM);
-    }
+    // @Test
+    // void testType() {
+    //     assertEquals(impl.type(), Norm.Type.T_NORM);
+    // }
 
     @Test
     void testToString() {
         assertNotNull(impl.toString());
     }
 
-    @Test
-    void testDuality() {
-        assertTrue(impl.duality() instanceof Maximum);
-    }
+    // @Test
+    // void testDuality() {
+    //     assertTrue(impl.duality() instanceof Maximum);
+    // }
 }

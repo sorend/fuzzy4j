@@ -15,7 +15,7 @@ public class AlgebraicSum extends AbstractNorm {
     public static final AlgebraicSum INSTANCE = new AlgebraicSum();
 
     public AlgebraicSum() {
-        super(Type.T_CONORM, AlgebraicProduct.INSTANCE);
+        super();
     }
 
     @Override

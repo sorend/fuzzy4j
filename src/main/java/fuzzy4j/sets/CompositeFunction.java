@@ -1,6 +1,7 @@
 package fuzzy4j.sets;
 
 import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.algebra.Norms;
 
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ import java.util.Arrays;
  * TriangularFunction f1 = new TriangularFunction(1.0, 2.0, 3.0);
  * TriangularFunction f2 = new TriangularFunction(0.5, 1.0, 1.5);
  * // create a composite, which is the product of the two.
- * CompositeFunction prod = new CompositeFunction(AlgebraicProduct.INSTANCE, f1, f2);
+ * CompositeFunction prod = new CompositeFunction(Norms.asAggregation(Norms.algebraicProduct()), f1, f2);
  * }
  * </pre>
  * @author Soren A. Davidsen <sorend@gmail.com>

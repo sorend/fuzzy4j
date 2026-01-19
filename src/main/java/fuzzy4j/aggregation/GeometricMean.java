@@ -8,11 +8,9 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class GeometricMean implements Aggregation, Norm {
+public class GeometricMean implements Aggregation {
 
     public static final GeometricMean INSTANCE = new GeometricMean();
-
-    private final DeMorganDuality DUAL = new DeMorganDuality(this);
 
     @Override
     public double apply(double... values) {
@@ -22,16 +20,6 @@ public class GeometricMean implements Aggregation, Norm {
         for (int i = 1; i < values.length; i++)
             p *= values[i];
         return Math.pow(p, 1.0 / values.length);
-    }
-
-    @Override
-    public Type type() {
-        return Type.UNKNOWN;
-    }
-
-    @Override
-    public Norm duality() {
-        return DUAL;
     }
 
     @Override

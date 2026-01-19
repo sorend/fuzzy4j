@@ -1,7 +1,7 @@
 package fuzzy4j.sets;
 
-import fuzzy4j.aggregation.AlgebraicProduct;
 import fuzzy4j.aggregation.Minimum;
+import fuzzy4j.algebra.Norms;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +19,7 @@ public class CompositeFunctionTest {
         ConstantFunction f1 = new ConstantFunction(0.5);
         TriangularFunction f2 = new TriangularFunction(0.0, 1.0, 2.0);
 
-        impl = new CompositeFunction(AlgebraicProduct.INSTANCE, f1, f2);
+        impl = new CompositeFunction(Norms.asAggregation(Norms.algebraicProduct()), f1, f2);
 
         assertEquals(0.5, impl.apply(1.0));
         assertEquals(0.25, impl.apply(0.5));

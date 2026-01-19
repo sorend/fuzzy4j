@@ -1,7 +1,6 @@
 package fuzzy4j.algebra;
 
 import fuzzy4j.aggregation.Aggregation;
-import fuzzy4j.aggregation.Norm;
 
 public class Norms {
 
@@ -187,7 +186,13 @@ public class Norms {
         return PRODUCT;
     }
 
-    public static class TNormWrapper implements Norm {
+    private static final TNorm ALGEBRAIC_PRODUCT = named("T_NORM_algebraic_product", (a, b) -> a * b);
+
+    public static TNorm algebraicProduct() {
+        return ALGEBRAIC_PRODUCT;
+    }
+
+    public static class TNormWrapper implements Aggregation {
         private final TNorm tnorm;
 
         public TNormWrapper(TNorm tnorm) {
@@ -201,23 +206,13 @@ public class Norms {
             }
             return tnorm.t(values[0], values[1]);
         }
-
-        @Override
-        public Type type() {
-            return Type.T_NORM;
-        }
-
-        @Override
-        public Norm duality() {
-            return new SNormWrapper(fromTNorm(tnorm));
-        }
     }
 
-    public static Norm asNorm(TNorm tnorm) {
+    public static Aggregation asAggregation(TNorm tnorm) {
         return new TNormWrapper(tnorm);
     }
 
-    public static class SNormWrapper implements Norm {
+    public static class SNormWrapper implements Aggregation {
         private final SNorm snorm;
 
         public SNormWrapper(SNorm snorm) {
@@ -231,15 +226,9 @@ public class Norms {
             }
             return snorm.s(values[0], values[1]);
         }
+    }
 
-        @Override
-        public Type type() {
-            return Type.T_CONORM;
-        }
-
-        @Override
-        public Norm duality() {
-            return new TNormWrapper(toTNorm(snorm instanceof DualSNorm ? (DualSNorm) snorm : null));
-        }
+    public static Aggregation asAggregation(SNorm snorm) {
+        return new SNormWrapper(snorm);
     }
 }

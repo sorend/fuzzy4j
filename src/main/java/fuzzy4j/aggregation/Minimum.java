@@ -8,7 +8,7 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class Minimum implements Norm, Aggregation {
+public class Minimum implements Aggregation {
 
     public static final Minimum INSTANCE = new Minimum();
 
@@ -17,17 +17,7 @@ public class Minimum implements Norm, Aggregation {
         return Maximum.minmax(values)[0];
     }
 
-    @Override
-    public Type type() {
-        return Type.T_NORM;
-    }
-
     public String toString() {
-        return type() + "_min";
-    }
-
-    @Override
-    public Norm duality() {
-        return Maximum.INSTANCE;
+        return "T_NORM_min";
     }
 }
