@@ -1,6 +1,6 @@
 package fuzzy4j.util;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.sets.FuzzyFunction;
 import fuzzy4j.sets.SupportAware;
 
@@ -114,8 +114,8 @@ public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
      * @param other
      * @return
      */
-    public SimpleInterval aggregate(Aggregation aggregation, SimpleInterval other) {
-        return i(aggregation.apply(min(), other.min()), aggregation.apply(max(), other.max()));
+    public SimpleInterval aggregate(Mean aggregation, SimpleInterval other) {
+        return i(aggregation.compute(min(), other.min()), aggregation.compute(max(), other.max()));
     }
 
     /**

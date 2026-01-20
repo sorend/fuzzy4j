@@ -1,6 +1,6 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.flc.defuzzify.Defuzzify;
 import fuzzy4j.sets.*;
 
@@ -21,17 +21,17 @@ public class FLC {
     private Variable[] inputs;
     private Variable[] outputs;
 
-    private Aggregation tnorm;
-    private Aggregation tconorm;
-    private Aggregation activationNorm;
-    private Aggregation accumulationTconorm;
+    private Mean tnorm;
+    private Mean tconorm;
+    private Mean activationNorm;
+    private Mean accumulationTconorm;
     private Defuzzify defuzzifier;
     private List<IfThenRule> rules;
 
-    public FLC(Aggregation tnorm,
-               Aggregation tconorm,
-               Aggregation activationNorm,
-               Aggregation accumulationTconorm,
+    public FLC(Mean tnorm,
+               Mean tconorm,
+               Mean activationNorm,
+               Mean accumulationTconorm,
                Defuzzify defuzzifier,
                List<IfThenRule> rules) {
         this.tnorm = tnorm;
@@ -69,12 +69,12 @@ public class FLC {
             }
 
             @Override
-            public Aggregation orFunction() {
+            public Mean orFunction() {
                 return FLC.this.tconorm;
             }
 
             @Override
-            public Aggregation andFunction() {
+            public Mean andFunction() {
                 return FLC.this.tnorm;
             }
         };

@@ -8,12 +8,12 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class GeometricMean implements Aggregation {
+public class GeometricMean implements Mean {
 
     public static final GeometricMean INSTANCE = new GeometricMean();
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
         double p = values[0];

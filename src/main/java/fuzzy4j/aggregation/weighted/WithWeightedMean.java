@@ -1,6 +1,6 @@
 package fuzzy4j.aggregation.weighted;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 import java.util.Arrays;
 import java.util.logging.Logger;
@@ -10,27 +10,27 @@ import java.util.logging.Logger;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class WithWeightedAggregation implements Aggregation {
+public class WithWeightedMean implements Mean {
 
-    private Logger LOG = Logger.getLogger(WithWeightedAggregation.class.getName());
+    private Logger LOG = Logger.getLogger(WithWeightedMean.class.getName());
 
-    private WeightedAggregation inner;
+    private WeightedMean inner;
     private double[] weights;
 
-    public WithWeightedAggregation(WeightedAggregation inner, double... weights) {
+    public WithWeightedMean(WeightedMean inner, double... weights) {
         this.inner = inner;
         this.weights = weights;
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values.length != weights.length)
             LOG.warning("values.length != weights.length");
         int min = Math.min(values.length, weights.length);
         WeightedValue[] weightedValues = new WeightedValue[min];
         for (int i = 0; i < min; i++)
             weightedValues[i] = WeightedValue.w(weights[i], values[i]);
-        return inner.apply(weightedValues);
+        return inner.compute(weightedValues);
     }
 
     @Override

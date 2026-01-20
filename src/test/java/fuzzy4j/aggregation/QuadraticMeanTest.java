@@ -16,12 +16,12 @@ public class QuadraticMeanTest {
     @Test
     void testApply() {
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(0.0, impl.apply(0));
-        assertEquals(1.0, impl.apply(1));
-        assertEquals(0.8, impl.apply(0.8));
+        assertEquals(0.0, impl.compute(0));
+        assertEquals(1.0, impl.compute(1));
+        assertEquals(0.8, impl.compute(0.8));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class QuadraticMeanTest {
 
         // 0, 0.2, 0.9 = 1/3 * (0*0 + 0.2*0.2 + 0.9*0.9) = 1/3 * (0 + 0.04 + 0.81) = 0.85 / 3 = 0.28333
         // sqrt = 0.53229
-        assertEquals(0.53229, impl.apply(0, 0.2, 0.9), 0.00001);
+        assertEquals(0.53229, impl.compute(0, 0.2, 0.9), 0.00001);
 
     }
 

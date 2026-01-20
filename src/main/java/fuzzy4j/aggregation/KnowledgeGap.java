@@ -8,10 +8,10 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class KnowledgeGap implements Aggregation {
+public class KnowledgeGap implements Mean {
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         double[] minmax = Maximum.minmax(values);
         return Math.min(minmax[1], 1 - (minmax[1] - minmax[0]));
     }

@@ -5,7 +5,7 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class AIWA implements Aggregation {
+public class AIWA implements Mean {
 
     public static final ParametricFactory<AIWA> FACTORY = new ParametricFactory<AIWA>() {
         @Override
@@ -26,7 +26,7 @@ public class AIWA implements Aggregation {
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
 
         if (p <= .5) {
             double s = 0.;

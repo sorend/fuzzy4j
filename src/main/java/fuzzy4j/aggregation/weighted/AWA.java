@@ -12,7 +12,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class AWA implements WeightedAggregation {
+public class AWA implements WeightedMean {
 
     public final double p;
     public final double l;
@@ -27,7 +27,7 @@ public class AWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
 
         if (p <= .5) {
             double alpha = (1. - p) / p;

@@ -5,7 +5,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class RollingAIWA implements WeightedRollingAggregation<RollingAIWA> {
+public class RollingAIWA implements WeightedRollingMean<RollingAIWA> {
 
     public final double p;
     public final double alpha;

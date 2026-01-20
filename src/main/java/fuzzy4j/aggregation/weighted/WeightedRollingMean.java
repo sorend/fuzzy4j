@@ -6,7 +6,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
  */
-public interface WeightedRollingAggregation<T extends WeightedRollingAggregation> {
+public interface WeightedRollingMean<T extends WeightedRollingMean> {
 
     public T add(WeightedValue... value);
 

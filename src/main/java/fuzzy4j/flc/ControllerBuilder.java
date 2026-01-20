@@ -1,6 +1,6 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.aggregation.Minimum;
 import fuzzy4j.flc.defuzzify.Centroid;
 import fuzzy4j.flc.defuzzify.Defuzzify;
@@ -28,10 +28,10 @@ public class ControllerBuilder {
         return new ControllerBuilder();
     }
 
-    private Aggregation tnorm = Minimum.INSTANCE;
-    private Aggregation tconorm = fuzzy4j.aggregation.Maximum.INSTANCE;
-    private Aggregation activationNorm = Minimum.INSTANCE;
-    private Aggregation accumulationTconorm = fuzzy4j.aggregation.Maximum.INSTANCE;
+    private Mean tnorm = Minimum.INSTANCE;
+    private Mean tconorm = fuzzy4j.aggregation.Maximum.INSTANCE;
+    private Mean activationNorm = Minimum.INSTANCE;
+    private Mean accumulationTconorm = fuzzy4j.aggregation.Maximum.INSTANCE;
     private Defuzzify defuzzifier = new Centroid();
 
     private List<IfThenRule> rules = new ArrayList();
@@ -43,22 +43,22 @@ public class ControllerBuilder {
         return rules;
     }
 
-    public ControllerBuilder andFunction(Aggregation aggregation) {
+    public ControllerBuilder andFunction(Mean aggregation) {
         this.tnorm = aggregation;
         return this;
     }
 
-    public ControllerBuilder orFunction(Aggregation aggregation) {
+    public ControllerBuilder orFunction(Mean aggregation) {
         this.tconorm = aggregation;
         return this;
     }
 
-    public ControllerBuilder activationFunction(Aggregation aggregation) {
+    public ControllerBuilder activationFunction(Mean aggregation) {
         this.activationNorm = aggregation;
         return this;
     }
 
-    public ControllerBuilder accumulationFunction(Aggregation aggregation) {
+    public ControllerBuilder accumulationFunction(Mean aggregation) {
         this.accumulationTconorm = aggregation;
         return this;
     }

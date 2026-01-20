@@ -63,11 +63,11 @@ public class AIWATest {
 
         fuzzy4j.aggregation.weighted.AIWA weighted = new fuzzy4j.aggregation.weighted.AIWA(2./3.);
 
-        double A = impl.apply(0.1, 0.7);
-        double B = impl.apply(0.9, 0.4);
+        double A = impl.compute(0.1, 0.7);
+        double B = impl.compute(0.9, 0.4);
 
-        double wA = weighted.apply(WeightedValue.pairs(1.0, 0.1, 1.0, 0.7));
-        double wB = weighted.apply(WeightedValue.pairs(1.0, 0.9, 1.0, 0.4));
+        double wA = weighted.compute(WeightedValue.pairs(1.0, 0.1, 1.0, 0.7));
+        double wB = weighted.compute(WeightedValue.pairs(1.0, 0.9, 1.0, 0.4));
 
         assertEquals(A, wA);
         assertEquals(B, wB);
@@ -78,8 +78,8 @@ public class AIWATest {
 
         impl = new AIWA(2./3.);
 
-        double A = impl.apply(0.1, 0.7);
-        double B = impl.apply(0.9, 0.4);
+        double A = impl.compute(0.1, 0.7);
+        double B = impl.compute(0.9, 0.4);
 
         assertEquals(0.33, A, 0.01);
         assertEquals(0.57, B, 0.01);
@@ -90,8 +90,8 @@ public class AIWATest {
 
         impl = new AIWA(1./3.);
 
-        double A = impl.apply(0.1, 0.7);
-        double B = impl.apply(0.9, 0.4);
+        double A = impl.compute(0.1, 0.7);
+        double B = impl.compute(0.9, 0.4);
 
         assertEquals(0.5, A, 0.01);
         assertEquals(0.7, B, 0.01);

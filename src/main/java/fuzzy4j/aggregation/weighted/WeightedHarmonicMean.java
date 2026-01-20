@@ -10,10 +10,10 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class WeightedHarmonicMean implements WeightedAggregation {
+public class WeightedHarmonicMean implements WeightedMean {
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
         // check if we have any 0 values (result is always 0 then)
         for (int i = 0; i < values.length; i++)
             if (values[i].value() == 0.0)

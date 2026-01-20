@@ -1,29 +1,29 @@
 package fuzzy4j.aggregation.weighted;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 /**
  * Wrap an unweighted aggregation as a weighted one (disregarding all weights)
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class AsWeightedAggregation implements WeightedAggregation {
+public class AsWeightedMean implements WeightedMean {
 
-    public static AsWeightedAggregation asWeighted(Aggregation inner) {
-        return new AsWeightedAggregation(inner);
+    public static AsWeightedMean asWeighted(Mean inner) {
+        return new AsWeightedMean(inner);
     }
 
-    private Aggregation inner;
+    private Mean inner;
 
-    public AsWeightedAggregation(Aggregation inner) {
+    public AsWeightedMean(Mean inner) {
         this.inner = inner;
     }
 
     @Override
-    public double apply(WeightedValue... weightedValues) {
+    public double compute(WeightedValue... weightedValues) {
         double[] values = new double[weightedValues.length];
         for (int i = 0; i < weightedValues.length; i++)
             values[i] = weightedValues[i].value();
-        return inner.apply(values);
+        return inner.compute(values);
     }
 }

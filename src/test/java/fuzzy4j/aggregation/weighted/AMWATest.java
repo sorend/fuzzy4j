@@ -16,9 +16,9 @@ public class AMWATest {
 
         impl = new AMWA(2./3.);
 
-        double A = impl.apply(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
+        double A = impl.compute(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
 
-        double B = impl.apply(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
+        double B = impl.compute(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
 
         System.out.println("A = " + A + ", B = " + B);
 
@@ -33,9 +33,9 @@ public class AMWATest {
 
         impl = new AMWA(1./3.);
 
-        double A = impl.apply(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
+        double A = impl.compute(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
 
-        double B = impl.apply(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
+        double B = impl.compute(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
 
         System.out.println("A = " + A + ", B = " + B);
 

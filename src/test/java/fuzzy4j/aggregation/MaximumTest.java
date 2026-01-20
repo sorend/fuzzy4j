@@ -23,14 +23,14 @@ public class MaximumTest {
     @Test
     void testApply() {
 
-        assertEquals(0.0, impl.apply(0, 0, 0, 0));
+        assertEquals(0.0, impl.compute(0, 0, 0, 0));
 
-        assertEquals(1.0, impl.apply(0, 0, 1, 0));
+        assertEquals(1.0, impl.compute(0, 0, 1, 0));
 
-        assertEquals(1.0, impl.apply(1.0, 0.0));
-        assertEquals(1.0, impl.apply(0.0, 1.0));
+        assertEquals(1.0, impl.compute(1.0, 0.0));
+        assertEquals(1.0, impl.compute(0.0, 1.0));
 
-        assertEquals(0.5, impl.apply(0.2, 0.0, 0.1, 0.5, 0.1, 0.4, 0.49999999));
+        assertEquals(0.5, impl.compute(0.2, 0.0, 0.1, 0.5, 0.1, 0.4, 0.49999999));
     }
 
     // @Test

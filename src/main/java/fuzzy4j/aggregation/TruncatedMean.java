@@ -3,12 +3,12 @@ package fuzzy4j.aggregation;
 import java.util.Arrays;
 
 /**
- * Aggregation operator using interquartile mean. The interquartile mean, is the arithmetic
+ * Mean operator using interquartile mean. The interquartile mean, is the arithmetic
  * mean after the 1st and 4th quartile values have been removed.
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class TruncatedMean implements Aggregation {
+public class TruncatedMean implements Mean {
 
     public static ParametricFactory<TruncatedMean> BY_PERCENTILE = new ParametricFactory<TruncatedMean>() {
         @Override
@@ -40,7 +40,7 @@ public class TruncatedMean implements Aggregation {
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
 
@@ -50,7 +50,7 @@ public class TruncatedMean implements Aggregation {
         int fourth = (int) Math.ceil(values.length * truncateUpper);
 
         // delegate to arithmetic mean
-        return ArithmeticMean.INSTANCE.apply(Arrays.copyOfRange(values, first, fourth));
+        return ArithmeticMean.INSTANCE.compute(Arrays.copyOfRange(values, first, fourth));
     }
 
     @Override

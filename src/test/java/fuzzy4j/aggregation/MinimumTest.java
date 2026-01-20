@@ -16,11 +16,11 @@ public class MinimumTest {
     @Test
     void testApply() {
 
-        assertEquals(1.0, impl.apply(1.0, 1.0, 1.0));
+        assertEquals(1.0, impl.compute(1.0, 1.0, 1.0));
 
-        assertEquals(0.5, impl.apply(1.0, 0.5, 0.8, 0.9));
+        assertEquals(0.5, impl.compute(1.0, 0.5, 0.8, 0.9));
 
-        assertEquals(0.0, impl.apply(0.2, 0.0, 0.4));
+        assertEquals(0.0, impl.compute(0.2, 0.0, 0.4));
     }
 
     // @Test

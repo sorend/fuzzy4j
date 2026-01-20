@@ -51,13 +51,13 @@ public class OWATest {
 
         impl = OWA.MEOWA_FACTORY(3, 0.80);
 
-        Aggregation meowa = OWA.MEOWA.create(0.80);
+        Mean meowa = OWA.MEOWA.create(0.80);
 
         assertNotNull(meowa);
         assertNotNull(impl);
 
-        double val = meowa.apply(0.3, 0.6, 0.9);
-        double val2 = impl.apply(0.3, 0.6, 0.9);
+        double val = meowa.compute(0.3, 0.6, 0.9);
+        double val2 = impl.compute(0.3, 0.6, 0.9);
 
         assertEquals(val, val2);
     }
@@ -83,13 +83,13 @@ public class OWATest {
     @Test
     void testOWAOperator_Max() {
         impl = new OWA(1.0, 0, 0, 0);
-        assertEquals(0.8, impl.apply(0.5, 0.2, 0.8, 0.1));
+        assertEquals(0.8, impl.compute(0.5, 0.2, 0.8, 0.1));
     }
 
     @Test
     void testOWAOperator_Min() {
         impl = new OWA(0, 0, 0, 1.0);
-        assertEquals(0.1, impl.apply(0.5, 0.2, 0.8, 0.1));
+        assertEquals(0.1, impl.compute(0.5, 0.2, 0.8, 0.1));
     }
 
     @Test

@@ -1,6 +1,6 @@
 package fuzzy4j.sets;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.Valued;
 
 import java.util.*;
@@ -95,13 +95,14 @@ public final class SingletonsSet<V extends Valued> {
         return newSet;
     }
 
-    public double aggregate(Aggregation operator) {
+    public double aggregate(Mean operator) {
         double[] d = new double[members.size()];
         int i = 0;
         for (Double v : members.values())
             d[i++] = v;
-        return operator.apply(d);
+        return operator.compute(d);
     }
+
 
     public SingletonsSet<V> alphacut(double alpha) {
         SingletonsSet<V> set = new SingletonsSet<V>();

@@ -10,7 +10,7 @@ import java.util.Arrays;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class WeightedOWA implements WeightedAggregation {
+public class WeightedOWA implements WeightedMean {
 
     private double[] weights;
     private double p;
@@ -30,7 +30,7 @@ public class WeightedOWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
         // we need same lenghts
         int min = Math.min(values.length, weights.length);
         // sort

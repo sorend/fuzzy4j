@@ -5,7 +5,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class AIWA implements WeightedAggregation {
+public class AIWA implements WeightedMean {
 
     public final double p;
     public final double alpha;
@@ -17,7 +17,7 @@ public class AIWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
 
         if (p <= .5) {
             double s = 0.;

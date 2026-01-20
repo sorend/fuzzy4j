@@ -15,27 +15,27 @@ public class MedianTest {
     @Test
     void testApply_01() {
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(1.0, impl.apply(1.0));
+        assertEquals(1.0, impl.compute(1.0));
 
-        assertEquals(0.0, impl.apply(0.0));
+        assertEquals(0.0, impl.compute(0.0));
 
-        assertEquals(0.4, impl.apply(0.0, 0.4, 1.0));
+        assertEquals(0.4, impl.compute(0.0, 0.4, 1.0));
 
-        assertEquals(0.5, impl.apply(0.0, 0.4, 0.6, 1.0));
+        assertEquals(0.5, impl.compute(0.0, 0.4, 0.6, 1.0));
 
     }
 
     @Test
     void testApply_02() {
 
-        assertEquals(0.5, impl.apply(0.0, 1.0));
+        assertEquals(0.5, impl.compute(0.0, 1.0));
 
-        assertEquals(0.4, impl.apply(1.0, 0.0, 0.4));
+        assertEquals(0.4, impl.compute(1.0, 0.0, 0.4));
 
-        assertEquals(0.5, impl.apply(0.4, 0.6, 0.2, 0.0, 1.0, 0.8));
+        assertEquals(0.5, impl.compute(0.4, 0.6, 0.2, 0.0, 1.0, 0.8));
 
     }
 

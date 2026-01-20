@@ -56,12 +56,12 @@ public class TruncatedMeanTest {
 
         impl = new TruncatedMean(0.25, 0.75);
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(0.0, impl.apply(0));
-        assertEquals(1.0, impl.apply(1));
-        assertEquals(0.8, impl.apply(0.8));
+        assertEquals(0.0, impl.compute(0));
+        assertEquals(1.0, impl.compute(1));
+        assertEquals(0.8, impl.compute(0.8));
     }
 
     @Test
@@ -69,9 +69,9 @@ public class TruncatedMeanTest {
 
         impl = new TruncatedMean(0.25, 0.75);
 
-        assertEquals(0.5, impl.apply(0.05, 0.1, 0.9, 0.91));
+        assertEquals(0.5, impl.compute(0.05, 0.1, 0.9, 0.91));
 
-        // not defined yet, assertEquals(0.5, impl.apply(0.05, 0.5, 0.7));
+        // not defined yet, assertEquals(0.5, impl.compute(0.05, 0.5, 0.7));
     }
 
     @Test

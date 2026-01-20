@@ -1,6 +1,6 @@
 package fuzzy4j.aggregation.weighted;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 /**
  * Weighted geometric mean aggregation operator.
@@ -10,9 +10,9 @@ import fuzzy4j.aggregation.Aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class WeightedGeometricMean implements WeightedAggregation {
+public class WeightedGeometricMean implements WeightedMean {
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
         double n = 0.0, d = 0.0;
         for (int i = 0; i < values.length; i++) {
             n += values[i].weight() * Math.log(values[i].value());

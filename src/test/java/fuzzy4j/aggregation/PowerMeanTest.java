@@ -48,12 +48,12 @@ public class PowerMeanTest {
 
         impl = PowerMean.FACTORY.create(0.5);
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(0.0, impl.apply(0));
-        assertEquals(1.0, impl.apply(1));
-        assertEquals(0.22, impl.apply(0.22), 0.00001);
+        assertEquals(0.0, impl.compute(0));
+        assertEquals(1.0, impl.compute(1));
+        assertEquals(0.22, impl.compute(0.22), 0.00001);
     }
 
 
@@ -62,18 +62,18 @@ public class PowerMeanTest {
 
         impl = new PowerMean(1.0);
 
-        assertEquals(1.0, impl.apply(1.0));
+        assertEquals(1.0, impl.compute(1.0));
 
         // for p = 1, we have the arithmetic mean.
         ArithmeticMean mean = ArithmeticMean.INSTANCE;
         double[] rand = random(10);
-        assertEquals(mean.apply(rand), impl.apply(rand));
+        assertEquals(mean.compute(rand), impl.compute(rand));
 
         impl = new PowerMean(1.1);
-        assertTrue(mean.apply(rand) < impl.apply(rand));
+        assertTrue(mean.compute(rand) < impl.compute(rand));
 
         impl = new PowerMean(0.9);
-        assertTrue(mean.apply(rand) > impl.apply(rand));
+        assertTrue(mean.compute(rand) > impl.compute(rand));
     }
 
     @Test

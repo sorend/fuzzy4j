@@ -19,9 +19,9 @@ public class AIWATest {
 
         impl = new AIWA(2./3.);
 
-        double A = impl.apply(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
+        double A = impl.compute(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
 
-        double B = impl.apply(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
+        double B = impl.compute(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
 
         assertEquals(0.565, A, 0.001);
         assertEquals(0.442, B, 0.001);
@@ -33,7 +33,7 @@ public class AIWATest {
 
         impl = new AIWA(1.0);
 
-        double A = impl.apply(WeightedValue.pairs(1.0, 0.4, 1.0, 0.6));
+        double A = impl.compute(WeightedValue.pairs(1.0, 0.4, 1.0, 0.6));
 
         System.out.println("A.one = " + A);
 
@@ -45,7 +45,7 @@ public class AIWATest {
 
         impl = new AIWA(0.0);
 
-        double A = impl.apply(WeightedValue.pairs(1.0, 0.4, 1.0, 0.6));
+        double A = impl.compute(WeightedValue.pairs(1.0, 0.4, 1.0, 0.6));
 
         System.out.println("A.zero = " + A);
 

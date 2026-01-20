@@ -16,7 +16,7 @@ public class WeightedOWATest {
         impl = new WeightedOWA(1./3., 1., 1.);
 
         // input: ((0.5, 1.0))
-        double A = impl.apply(WeightedValue.pairs(0.5, 1.0));
+        double A = impl.compute(WeightedValue.pairs(0.5, 1.0));
 
         System.out.println("A = " + A);
 

@@ -1,16 +1,16 @@
 package fuzzy4j.aggregation;
 
 /**
- * Aggregation operator quadratic mean (more commonly called Root Mean Square)
+ * Mean operator quadratic mean (more commonly called Root Mean Square)
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class QuadraticMean implements Aggregation {
+public class QuadraticMean implements Mean {
 
     public static QuadraticMean INSTANCE = new QuadraticMean();
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
         double ss = 0.0;

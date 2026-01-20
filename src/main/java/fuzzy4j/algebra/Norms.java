@@ -1,6 +1,6 @@
 package fuzzy4j.algebra;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 public class Norms {
 
@@ -180,6 +180,22 @@ public class Norms {
         return MINIMUM;
     }
 
+    private static final SNorm MAXIMUM = new SNorm() {
+        @Override
+        public double s(double a, double b) {
+            return Math.max(a, b);
+        }
+
+        @Override
+        public String toString() {
+            return "S_NORM_max";
+        }
+    };
+
+    public static SNorm maximum() {
+        return MAXIMUM;
+    }
+
     private static final TNorm PRODUCT = named("T_NORM_prod", (a, b) -> a * b);
 
     public static TNorm product() {
@@ -192,7 +208,11 @@ public class Norms {
         return ALGEBRAIC_PRODUCT;
     }
 
-    public static class TNormWrapper implements Aggregation {
+    public static SNorm algebraicSum() {
+        return fromTNorm(ALGEBRAIC_PRODUCT);
+    }
+
+    public static class TNormWrapper implements Mean {
         private final TNorm tnorm;
 
         public TNormWrapper(TNorm tnorm) {
@@ -200,19 +220,22 @@ public class Norms {
         }
 
         @Override
-        public double apply(double... values) {
-            if (values.length != 2) {
-                throw new IllegalArgumentException("TNorm requires exactly 2 values");
+        public double compute(double... values) {
+            if (values.length == 0) return 0.0;
+            if (values.length == 1) return values[0];
+            double res = values[0];
+            for (int i = 1; i < values.length; i++) {
+                res = tnorm.t(res, values[i]);
             }
-            return tnorm.t(values[0], values[1]);
+            return res;
         }
     }
 
-    public static Aggregation asAggregation(TNorm tnorm) {
+    public static Mean asMean(TNorm tnorm) {
         return new TNormWrapper(tnorm);
     }
 
-    public static class SNormWrapper implements Aggregation {
+    public static class SNormWrapper implements Mean {
         private final SNorm snorm;
 
         public SNormWrapper(SNorm snorm) {
@@ -220,15 +243,18 @@ public class Norms {
         }
 
         @Override
-        public double apply(double... values) {
-            if (values.length != 2) {
-                throw new IllegalArgumentException("SNorm requires exactly 2 values");
+        public double compute(double... values) {
+            if (values.length == 0) return 0.0;
+            if (values.length == 1) return values[0];
+            double res = values[0];
+            for (int i = 1; i < values.length; i++) {
+                res = snorm.s(res, values[i]);
             }
-            return snorm.s(values[0], values[1]);
+            return res;
         }
     }
 
-    public static Aggregation asAggregation(SNorm snorm) {
+    public static Mean asMean(SNorm snorm) {
         return new SNormWrapper(snorm);
     }
 }

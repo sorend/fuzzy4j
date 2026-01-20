@@ -1,23 +1,27 @@
 package fuzzy4j.aggregation;
 
+import fuzzy4j.algebra.Norms;
+import fuzzy4j.algebra.TNorm;
+
 /**
- * Minimum (min) aggregation operator.
- *
- * Defined as:
- *    <code>M_M(a_1, a_2, ... a_n) = min^n_k=1 a_k</code>
- *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Implementation of Minimum Mean.
  */
-public class Minimum implements Aggregation {
+public class Minimum implements Mean {
 
     public static final Minimum INSTANCE = new Minimum();
 
     @Override
-    public double apply(double... values) {
-        return Maximum.minmax(values)[0];
+    public double compute(double... values) {
+        if (values == null || values.length == 0) return 0.0;
+        TNorm norm = Norms.minimum();
+        double min = values[0];
+        for (int i = 1; i < values.length; i++) {
+            min = norm.t(min, values[i]);
+        }
+        return min;
     }
 
-    public String toString() {
-        return "T_NORM_min";
+    public static double of(double... values) {
+        return INSTANCE.compute(values);
     }
 }

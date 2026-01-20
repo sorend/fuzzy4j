@@ -1,6 +1,6 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.aggregation.Maximum;
 import fuzzy4j.aggregation.Minimum;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,12 +57,12 @@ public class RuleBuilderTest {
         final InputInstance instance = new InputInstance();
         InputInstanceAccessor a = new InputInstanceAccessor() {
             @Override
-            public Aggregation orFunction() {
+            public Mean orFunction() {
                 return Maximum.INSTANCE;
             }
 
             @Override
-            public Aggregation andFunction() {
+            public Mean andFunction() {
                 return Minimum.INSTANCE;
             }
 
@@ -93,12 +93,12 @@ public class RuleBuilderTest {
         final InputInstance instance = new InputInstance();
         InputInstanceAccessor a = new InputInstanceAccessor() {
             @Override
-            public Aggregation orFunction() {
+            public Mean orFunction() {
                 return Maximum.INSTANCE;
             }
 
             @Override
-            public Aggregation andFunction() {
+            public Mean andFunction() {
                 return Minimum.INSTANCE;
             }
 

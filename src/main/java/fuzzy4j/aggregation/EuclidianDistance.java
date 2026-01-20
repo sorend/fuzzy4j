@@ -5,12 +5,12 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class EuclidianDistance implements Aggregation {
+public class EuclidianDistance implements Mean {
 
     public static final EuclidianDistance INSTANCE = new EuclidianDistance();
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         double s = 0.0;
         // sum( (1-a_i)^2 )
         for (int i = 0; i < values.length; i++)

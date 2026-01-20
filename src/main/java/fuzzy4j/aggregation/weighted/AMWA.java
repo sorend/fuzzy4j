@@ -5,7 +5,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class AMWA implements WeightedAggregation {
+public class AMWA implements WeightedMean {
 
     public final double p;
     public final double alpha;
@@ -16,7 +16,7 @@ public class AMWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
 
         double s_w = 0.0;
         for (int i = 0; i < values.length; i++)

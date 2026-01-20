@@ -1,7 +1,7 @@
 package fuzzy4j.aggregation;
 
 /**
- * Aggregation operator using power-mean [1]. The power mean is also commonly called generalized mean.
+ * Mean operator using power-mean [1]. The power mean is also commonly called generalized mean.
  *
  * Defined as:
  *   <code>M_p(a_1, a_2, .. a_n) = ( 1/n Sum^n_k=1 a_n^p )^(1/p)</code>
@@ -13,7 +13,7 @@ package fuzzy4j.aggregation;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class PowerMean implements Aggregation {
+public class PowerMean implements Mean {
 
     public static ParametricFactory<PowerMean> FACTORY = new ParametricFactory<PowerMean>() {
         @Override
@@ -31,7 +31,7 @@ public class PowerMean implements Aggregation {
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
         double s = 0.0;
