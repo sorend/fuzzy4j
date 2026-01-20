@@ -11,7 +11,7 @@ import java.util.Iterator;
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class SingletonsFunction implements FuzzyFunction, SupportAware {
+public class SingletonsFunction implements FuzzyFunction {
 
     private double defaultValue = 0.0;
     private Point[] elements;
@@ -37,16 +37,6 @@ public class SingletonsFunction implements FuzzyFunction, SupportAware {
             if (elements[i].x() == x)
                 return elements[i].y();
         return defaultValue;
-    }
-
-    @Override
-    public SimpleInterval support() {
-        double min = Double.POSITIVE_INFINITY, max = Double.NEGATIVE_INFINITY;
-        for (Point p : elements) {
-            min = Math.min(p.x(), min);
-            max = Math.max(p.x(), max);
-        }
-        return new SimpleInterval(true, min, max, true);
     }
 
     public Iterator<Point> iterator() {

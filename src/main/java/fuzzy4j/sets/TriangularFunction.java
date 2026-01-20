@@ -26,7 +26,7 @@ import static fuzzy4j.util.SimpleInterval.i;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class TriangularFunction implements FuzzyFunction, SupportAware, CenterAware {
+public class TriangularFunction implements FuzzyFunction {
 
     private SimpleInterval support;
 
@@ -62,16 +62,6 @@ public class TriangularFunction implements FuzzyFunction, SupportAware, CenterAw
 
 
         // return Math.max(0.0, Math.min((x-a) / (b - a), (c - x) / (c - b)));
-    }
-
-    @Override
-    public SimpleInterval support() {
-        return support;
-    }
-
-    @Override
-    public double center() {
-        return b;
     }
 
     public String toString() {

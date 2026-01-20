@@ -6,7 +6,6 @@ import java.io.Serializable;
  * Representation of a apply function. A apply function should define apply
  * for all x in the universal set X.
  *
- * @see SupportAware
  */
 public interface FuzzyFunction extends Serializable {
     /**

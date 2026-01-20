@@ -8,7 +8,7 @@ import fuzzy4j.util.SimpleInterval;
  * Negate the function to create Z-shape.
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class SFunction implements FuzzyFunction, SupportAware, CenterAware {
+public class SFunction implements FuzzyFunction {
 
     private double a;
     private double b;
@@ -36,16 +36,6 @@ public class SFunction implements FuzzyFunction, SupportAware, CenterAware {
             return 1.0 - (2.0 * Math.pow(((b - x) / (b - a)), 2));
         else // more than b
             return 1;
-    }
-
-    @Override
-    public SimpleInterval support() {
-        return new SimpleInterval(false, a, Double.POSITIVE_INFINITY, true);
-    }
-
-    @Override
-    public double center() {
-        return b;
     }
 
     public String toString() {

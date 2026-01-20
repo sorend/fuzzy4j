@@ -11,7 +11,7 @@ import java.util.Arrays;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class PointsLinearFunction implements FuzzyFunction, SupportAware {
+public class PointsLinearFunction implements FuzzyFunction {
 
     private double defaultValue = 0.0;
     public final Point[] points;
@@ -19,11 +19,6 @@ public class PointsLinearFunction implements FuzzyFunction, SupportAware {
     public PointsLinearFunction(double defaultValue, Point... points) {
         this(points);
         this.defaultValue = defaultValue;
-    }
-
-    @Override
-    public SimpleInterval support() {
-        return new SimpleInterval(true, points[0].x(), points[points.length-1].x(), true);
     }
 
     public PointsLinearFunction(Point... points) {

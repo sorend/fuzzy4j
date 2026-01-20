@@ -47,8 +47,8 @@ public class MinimumSupport {
 
     public double[] calculate(PointsLinearFunction A, SimpleInterval B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.points[0].x(), A.points[A.points.length-1].x(), true);
+        SimpleInterval B_sup = B;
 
         SimpleInterval overlap = overlap(A_sup, B_sup); // calculate overlapping support
 
@@ -70,8 +70,8 @@ public class MinimumSupport {
 
     public double[] calculate(TriangularFunction A, SimpleInterval B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.a, A.c, true);
+        SimpleInterval B_sup = B;
 
         SimpleInterval overlap = overlap(A_sup, B_sup); // calculate overlapping support
 
@@ -90,8 +90,8 @@ public class MinimumSupport {
 
     public double[] calculate(TriangularFunction A, TriangularFunction B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.a, A.c, true);
+        SimpleInterval B_sup = new SimpleInterval(true, B.a, B.c, true);
 
         SimpleInterval overlap = overlap(A_sup, B_sup);
 

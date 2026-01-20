@@ -10,17 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TriangularFunctionTest {
 
     @Test
-    void center() {
-
-        TriangularFunction f = new TriangularFunction(0, 1, 2);
-
-        assertEquals(1.0, f.center());
-
-        TriangularFunction f2 = new TriangularFunction(0, 10, 11);
-        assertEquals(10.0, f2.center());
-    }
-
-    @Test
     public void simple() {
 
         TriangularFunction f = new TriangularFunction(0.0, 1.0, 2.0);

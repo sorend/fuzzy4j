@@ -14,7 +14,7 @@ import fuzzy4j.util.SimpleInterval;
  *
  * @author Soren A. Davidsen <sorend@gmail.com>
  */
-public class SigmoidFunction implements FuzzyFunction, SupportAware {
+public class SigmoidFunction implements FuzzyFunction {
 
     private double alpha;
     private double x0;
@@ -27,12 +27,5 @@ public class SigmoidFunction implements FuzzyFunction, SupportAware {
     @Override
     public double apply(double x) {
         return 1.0 / (1.0 + Math.exp(-alpha * (x - x0)));
-    }
-
-    @Override
-    public SimpleInterval support() {
-        double min = x0 - 9 / Math.abs(alpha);
-        double max = x0 + 9 / Math.abs(alpha);
-        return new SimpleInterval(true, min, max, true);
     }
 }

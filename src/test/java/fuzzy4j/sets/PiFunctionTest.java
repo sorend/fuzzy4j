@@ -43,10 +43,4 @@ public class PiFunctionTest {
 
     }
 
-    @Test
-    void testCenter() {
-        impl = new PiFunction(1, 2, 3, 2.0);
-
-        assertEquals(2.0, impl.center());
-    }
 }
