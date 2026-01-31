@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Mean operator using interquartile mean. The interquartile mean, is the arithmetic
  * mean after the 1st and 4th quartile values have been removed.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class TruncatedMean implements Mean {
 

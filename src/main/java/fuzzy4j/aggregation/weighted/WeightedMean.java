@@ -3,7 +3,7 @@ package fuzzy4j.aggregation.weighted;
 /**
  * Weighted aggregation is a special case of aggregation where we work on pairs of weight and apply.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public interface WeightedMean {
 

@@ -3,7 +3,7 @@ package fuzzy4j.sets;
 /**
  * A apply function which allows to join two sets based on a split in x values.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class SplitFunction implements FuzzyFunction {
 

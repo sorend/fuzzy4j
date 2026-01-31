@@ -6,7 +6,7 @@ import fuzzy4j.util.SimpleInterval;
  * Implementation of an S-shape membershipi function.
  *
  * Negate the function to create Z-shape.
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class SFunction implements FuzzyFunction {
 
@@ -17,8 +17,8 @@ public class SFunction implements FuzzyFunction {
     /**
      * Creates an S function that goes between [0, 1].
      *
-     * @param a The point where x starts to to grow. f(x) = 0 forall x < a
-     * @param b The point where x is at 1, f(x) = 1 forall x > b
+     * @param a The point where x starts to to grow. f(x) = 0 forall x &lt; a
+     * @param b The point where x is at 1, f(x) = 1 forall x &gt; b
      */
     public SFunction(double a, double b) {
         this.a = Math.min(a, b);

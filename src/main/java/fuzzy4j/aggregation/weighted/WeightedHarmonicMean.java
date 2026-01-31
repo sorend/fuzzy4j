@@ -8,7 +8,7 @@ package fuzzy4j.aggregation.weighted;
  *
  * [1] http://en.wikipedia.org/wiki/Weighted_harmonic_mean#Weighted_harmonic_mean
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class WeightedHarmonicMean implements WeightedMean {
 

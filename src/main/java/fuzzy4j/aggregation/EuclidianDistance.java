@@ -3,7 +3,7 @@ package fuzzy4j.aggregation;
 /**
  * Implementation of an aggregation operator using euclidian distance.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class EuclidianDistance implements Mean {
 

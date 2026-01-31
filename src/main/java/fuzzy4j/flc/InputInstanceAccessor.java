@@ -4,7 +4,7 @@ import fuzzy4j.aggregation.Mean;
 
 /**
  * Retrieves the discretized value.
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public interface InputInstanceAccessor {
 

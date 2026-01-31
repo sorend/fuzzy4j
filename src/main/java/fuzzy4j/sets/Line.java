@@ -3,7 +3,7 @@ package fuzzy4j.sets;
 /**
  * Simple linear function.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public record Line(double m, double b) {
 

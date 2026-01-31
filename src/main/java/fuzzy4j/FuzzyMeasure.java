@@ -5,7 +5,7 @@ import fuzzy4j.sets.FuzzyFunction;
 import java.util.*;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class FuzzyMeasure {
 

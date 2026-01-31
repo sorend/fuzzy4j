@@ -3,7 +3,7 @@ package fuzzy4j.aggregation.weighted;
 /**
  * Simple implementation of a sequence in Java
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public record WeightedValue(double weight, double value) implements Comparable<WeightedValue> {
 

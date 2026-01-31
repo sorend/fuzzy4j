@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public final class SingletonsSet<V extends Valued> {
 

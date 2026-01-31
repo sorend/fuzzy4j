@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 /**
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class SingletonsFunction implements FuzzyFunction {
 

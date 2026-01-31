@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Implements hierarchical clustering.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class HierarchicalClustering<V> {
 

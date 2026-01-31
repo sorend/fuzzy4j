@@ -3,7 +3,7 @@ package fuzzy4j.util;
 import fuzzy4j.aggregation.weighted.WeightedValue;
 
 /**
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class ParametersUtil {
 

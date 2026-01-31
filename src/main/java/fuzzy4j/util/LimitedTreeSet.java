@@ -5,7 +5,7 @@ import java.util.TreeSet;
 /**
  * A sorted collection with a limited capacity.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class LimitedTreeSet<E> extends TreeSet<E> {
 

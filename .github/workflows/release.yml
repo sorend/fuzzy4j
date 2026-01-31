@@ -22,7 +22,15 @@ jobs:
           
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
-        
+
+      - name: Publish to Maven Central
+        run: ./gradlew publish --no-daemon
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:

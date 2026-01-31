@@ -5,7 +5,7 @@ import fuzzy4j.util.SimpleInterval;
 /**
  * Defines simple apply functions for use in every-day fuzzy logic problems :-)
  *
- * @author Soren AD <sdavid08@student.aau.dk>
+ * Soren AD (sdavid08@student.aau.dk)
  */
 public class SetsFactory {
 

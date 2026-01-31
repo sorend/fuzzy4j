@@ -5,7 +5,7 @@ import fuzzy4j.aggregation.Mean;
 /**
  * Wrap an unweighted aggregation as a weighted one (disregarding all weights)
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class AsWeightedMean implements WeightedMean {
 

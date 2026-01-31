@@ -8,7 +8,7 @@ import java.util.List;
  * Defines variables of a fuzzy controller. The variable has a name, and a set of
  * fuzzy terms attached, as well as a universe for which the input can take.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class Variable {
 

@@ -5,7 +5,7 @@ import fuzzy4j.aggregation.Mean;
 import java.util.Arrays;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class ExpressionFactory {
 

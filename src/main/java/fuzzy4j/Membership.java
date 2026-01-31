@@ -5,7 +5,7 @@ package fuzzy4j;
  *
  * The membership maintains the identity equals and hashCode of the wrapped object.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public record Membership<T>(T obj, double value) implements Valued {
 }

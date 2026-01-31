@@ -6,7 +6,7 @@ import fuzzy4j.sets.FuzzyFunction;
 /**
  * Representation of an interval.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class SimpleInterval implements Range, FuzzyFunction {
 

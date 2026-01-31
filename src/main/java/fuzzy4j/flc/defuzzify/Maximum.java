@@ -18,7 +18,7 @@ import fuzzy4j.util.FuzzyUtil;
  *   <li>{@link fuzzy4j.flc.defuzzify.Maximum#meanOfMax()} Considers the mean of first and last maximum, for T this is (c - b) / 2</li>
  * </ul>
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class Maximum extends SamplingDefuzzify {
 

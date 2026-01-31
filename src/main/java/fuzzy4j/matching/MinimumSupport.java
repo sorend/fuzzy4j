@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Calculates the minimum support of two functions.
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class MinimumSupport {
 

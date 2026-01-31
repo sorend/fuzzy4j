@@ -9,7 +9,7 @@ import java.util.Arrays;
  *
  * Note. Datapoints must be ordered when creating the membershipfunction.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class PointsLinearFunction implements FuzzyFunction {
 

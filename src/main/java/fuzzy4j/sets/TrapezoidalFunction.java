@@ -7,7 +7,7 @@ import static fuzzy4j.util.SimpleInterval.i;
 /**
  * A trapeze shaped apply function.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class TrapezoidalFunction implements FuzzyFunction {
 

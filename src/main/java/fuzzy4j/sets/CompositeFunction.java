@@ -18,7 +18,7 @@ import java.util.Arrays;
  * CompositeFunction prod = new CompositeFunction(Norms.asMean(Norms.algebraicProduct()), f1, f2);
  * }
  * </pre>
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class CompositeFunction implements FuzzyFunction {
 

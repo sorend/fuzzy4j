@@ -3,7 +3,7 @@ package fuzzy4j.flc;
 /**
  * Representation of the fuzzy if then rule.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class IfThenRule {
 

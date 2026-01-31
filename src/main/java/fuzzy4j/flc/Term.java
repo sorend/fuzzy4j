@@ -5,7 +5,7 @@ import fuzzy4j.sets.TrapezoidalFunction;
 import fuzzy4j.sets.TriangularFunction;
 
 /**
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public record Term(String name, FuzzyFunction set) {
 
