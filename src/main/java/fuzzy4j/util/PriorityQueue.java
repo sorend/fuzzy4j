@@ -4,11 +4,11 @@ package fuzzy4j.util;
  * A PriorityQueue maintains a partial ordering of its elements such that the
  * least element can always be found in constant time.  Put()'s and pop()'s
  * require log(size) time.
- * <p/>
+ * <p>
  * <p><b>NOTE</b>: This class pre-allocates a full array of
  * length <code>maxSize+1</code>, in {@link #initialize}.
  *
- * @lucene.internal
+ * 
  */
 public abstract class PriorityQueue<T> {
     private int size;
@@ -19,7 +19,7 @@ public abstract class PriorityQueue<T> {
      * Determines the ordering of objects in this priority queue.  Subclasses
      * must define this one method.
      *
-     * @return <code>true</code> iff parameter <tt>a</tt> is less than parameter <tt>b</tt>.
+     * @return <code>true</code> iff parameter <code>a</code> is less than parameter <code>b</code>.
      */
     protected abstract boolean lessThan(T a, T b);
 
@@ -28,21 +28,21 @@ public abstract class PriorityQueue<T> {
      * object which will be used by {@link #initialize(int)} to fill the queue, so
      * that the code which uses that queue can always assume it's full and only
      * change the top without attempting to insert any new object.<br>
-     * <p/>
+     * <p>
      * Those sentinel values should always compare worse than any non-sentinel
      * value (i.e., {@link #lessThan} should always favor the
      * non-sentinel values).<br>
-     * <p/>
+     * <p>
      * By default, this method returns false, which means the queue will not be
      * filled with sentinel values. Otherwise, the value returned will be used to
      * pre-populate the queue. Adds sentinel values to the queue.<br>
-     * <p/>
+     * <p>
      * If this method is extended to return a non-null value, then the following
      * usage pattern is recommended:
-     * <p/>
+     * <p>
      * <pre>
      * // extends getSentinelObject() to return a non-null value.
-     * PriorityQueue<MyObject> pq = new MyQueue<MyObject>(numHits);
+     * PriorityQueue&lt;MyObject&gt; pq = new MyQueue&lt;MyObject&gt;(numHits);
      * // save the 'top' element, which is guaranteed to not be null.
      * MyObject pqTop = pq.top();
      * &lt;...&gt;
@@ -51,7 +51,7 @@ public abstract class PriorityQueue<T> {
      * pqTop.change().
      * pqTop = pq.updateTop();
      * </pre>
-     * <p/>
+     * <p>
      * <b>NOTE:</b> if this method returns a non-null value, it will be called by
      * {@link #initialize(int)} {@link #size()} times, relying on a new object to
      * be returned and will not check if it's null again. Therefore you should
@@ -174,14 +174,14 @@ public abstract class PriorityQueue<T> {
     /**
      * Should be called when the Object at top changes values. Still log(n) worst
      * case, but it's at least twice as fast to
-     * <p/>
+     * <p>
      * <pre>
      * pq.top().change();
      * pq.updateTop();
      * </pre>
-     * <p/>
+     * <p>
      * instead of
-     * <p/>
+     * <p>
      * <pre>
      * o = pq.pop();
      * o.change();
@@ -247,7 +247,7 @@ public abstract class PriorityQueue<T> {
     /**
      * This method returns the internal heap array as Object[].
      *
-     * @lucene.internal
+     * 
      */
     protected final Object[] getHeapArray() {
         return (Object[]) heap;

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Calculates the minimum support of two functions.
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class MinimumSupport {
 
@@ -29,26 +29,26 @@ public class MinimumSupport {
         if (p == null)
             return;
 
-        if (!(0 < p.y && p.y < 1)) // outside the unit interval, meaning outside of fuzzy function def.
+        if (!(0 < p.y() && p.y() < 1)) // outside unit interval, meaning outside of fuzzy function def.
             return;
 
-        if (!overlap.within(p.x)) // intersection is outside the overlap, we don't care about it.
+        if (!overlap.within(p.x())) // intersection is outside overlap, we don't care about it.
             return;
 
         // update necessity
-        nec.add(p.y);
-        pos.add(p.y);
+        nec.add(p.y());
+        pos.add(p.y());
     }
 
     public void updateNecPos(List<Double> pos, List<Double> nec, Point p, FuzzyFunction B) {
-        pos.add(Math.min(p.y, B.apply(p.x)));
-        nec.add(Math.max(p.y, 1.0 - B.apply(p.x)));
+        pos.add(Math.min(p.y(), B.apply(p.x())));
+        nec.add(Math.max(p.y(), 1.0 - B.apply(p.x())));
     }
 
     public double[] calculate(PointsLinearFunction A, SimpleInterval B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.points[0].x(), A.points[A.points.length-1].x(), true);
+        SimpleInterval B_sup = B;
 
         SimpleInterval overlap = overlap(A_sup, B_sup); // calculate overlapping support
 
@@ -70,8 +70,8 @@ public class MinimumSupport {
 
     public double[] calculate(TriangularFunction A, SimpleInterval B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.a, A.c, true);
+        SimpleInterval B_sup = B;
 
         SimpleInterval overlap = overlap(A_sup, B_sup); // calculate overlapping support
 
@@ -90,8 +90,8 @@ public class MinimumSupport {
 
     public double[] calculate(TriangularFunction A, TriangularFunction B) {
 
-        SimpleInterval A_sup = A.support(); // find spport
-        SimpleInterval B_sup = B.support();
+        SimpleInterval A_sup = new SimpleInterval(true, A.a, A.c, true);
+        SimpleInterval B_sup = new SimpleInterval(true, B.a, B.c, true);
 
         SimpleInterval overlap = overlap(A_sup, B_sup);
 

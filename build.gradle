@@ -2,15 +2,18 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'jacoco'
+    id 'signing'
 }
 
 // version
 group = 'com.github.sorend'
-// version = git_version()
+version = git_version()
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
     withSourcesJar()
+    withJavadocJar()
 }
 
 repositories {
@@ -18,23 +21,77 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 wrapper {
-    gradleVersion = "8.11"
+    gradleVersion = "9.2.1"
 }
 
 publishing {
     publications {
-        dist(MavenPublication) {
+        mavenJava(MavenPublication) {
             from components.java
+            
+            pom {
+                name = 'fuzzy4j'
+                description = 'Fuzzy logic library for Java'
+                url = 'https://github.com/sorend/fuzzy4j'
+                licenses {
+                    license {
+                        name = 'The MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'sorend'
+                        name = 'Soren D'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/sorend/fuzzy4j.git'
+                    developerConnection = 'scm:git:ssh://github.com/sorend/fuzzy4j.git'
+                    url = 'https://github.com/sorend/fuzzy4j'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
         }
     }
 }
 
+signing {
+    def signingKey = System.getenv("SIGNING_KEY")
+    def signingPassword = System.getenv("SIGNING_PASSWORD")
+    if (signingKey && signingPassword) {
+        useInMemoryPgpKeys(signingKey, signingPassword)
+        sign publishing.publications.mavenJava
+    }
+}
+
 def git_version() {
-    "git describe --tags --always --abbrev=5".execute().text.trim()
+    try {
+        return "git describe --tags --always --abbrev=5".execute().text.trim()
+    } catch (Exception e) {
+        return "0.0.1-SNAPSHOT"
+    }
 }
 
 jacocoTestReport {

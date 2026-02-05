@@ -5,7 +5,7 @@ import fuzzy4j.sets.FuzzyFunction;
 /**
  * Abstract base class for negation of fuzzy sets.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public abstract class NegationFunction implements FuzzyFunction {
 

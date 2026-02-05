@@ -8,9 +8,9 @@ import java.util.Arrays;
  * [1] Yager, R. R., "On ordered weighted averaging aggregation operators in multi-criteria decision making,"
  *  IEEE Transactions on Systems, Man and Cybernetics 18, 183-190, 1988.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class OWA implements Aggregation {
+public class OWA implements Mean {
 
     public static final ParametricFactory<OWA> FACTORY = new ParametricFactory<OWA>() {
         @Override
@@ -19,20 +19,20 @@ public class OWA implements Aggregation {
         }
     };
 
-    public static final ParametricFactory<Aggregation> MEOWA = new ParametricFactory<Aggregation>() {
+    public static final ParametricFactory<Mean> MEOWA = new ParametricFactory<Mean>() {
         @Override
-        public Aggregation create(double... params) {
+        public Mean create(double... params) {
             if (params == null || params.length < 1)
                 throw new IllegalArgumentException("MEOWA factory requires one parameter (rho)");
             final double rho = params[0];
             // aggr
-            return new Aggregation() {
+            return new Mean() {
                 private OWA owa;
                 @Override
-                public double apply(double... values) {
+                public double compute(double... values) {
                     if (owa == null)
                         owa = MEOWA_FACTORY(values.length, rho);
-                    return owa.apply(values);
+                    return owa.compute(values);
                 }
             };
         }
@@ -92,7 +92,7 @@ public class OWA implements Aggregation {
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         // we need same lenghts
         int min = Math.min(values.length, weights.length);
         // sort
@@ -145,7 +145,7 @@ public class OWA implements Aggregation {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        var sb = new StringBuilder();
         for (int i = 0; i < weights.length; i++)
             sb.append(" " + weights[i]);
         return "OWA{" +

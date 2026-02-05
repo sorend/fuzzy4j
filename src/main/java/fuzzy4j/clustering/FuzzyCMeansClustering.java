@@ -3,7 +3,7 @@ package fuzzy4j.clustering;
 import java.util.Set;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class FuzzyCMeansClustering<V> {
 

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Represents a single input instance for evaluation by the fuzzy controller.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class InputInstance {
 

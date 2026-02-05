@@ -1,7 +1,7 @@
 package fuzzy4j.flc;
 
 /**
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class HedgeBuilder {
 

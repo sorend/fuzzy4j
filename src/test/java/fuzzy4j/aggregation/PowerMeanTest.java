@@ -1,12 +1,12 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
-import static junit.framework.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -16,7 +16,7 @@ public class PowerMeanTest {
     PowerMean impl;
 
     @Test
-    public void testParametricFactory() throws Exception {
+    void testParametricFactory() {
 
         impl = PowerMean.FACTORY.create(1.0);
 
@@ -44,40 +44,40 @@ public class PowerMeanTest {
     }
 
     @Test
-    public void testApply_basic() throws Exception {
+    void testApply_basic() {
 
         impl = PowerMean.FACTORY.create(0.5);
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(0.0, impl.apply(0));
-        assertEquals(1.0, impl.apply(1));
-        assertEquals(0.22, impl.apply(0.22), 0.00001);
+        assertEquals(0.0, impl.compute(0));
+        assertEquals(1.0, impl.compute(1));
+        assertEquals(0.22, impl.compute(0.22), 0.00001);
     }
 
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = new PowerMean(1.0);
 
-        assertEquals(1.0, impl.apply(1.0));
+        assertEquals(1.0, impl.compute(1.0));
 
         // for p = 1, we have the arithmetic mean.
         ArithmeticMean mean = ArithmeticMean.INSTANCE;
         double[] rand = random(10);
-        assertEquals(mean.apply(rand), impl.apply(rand));
+        assertEquals(mean.compute(rand), impl.compute(rand));
 
         impl = new PowerMean(1.1);
-        assertTrue(mean.apply(rand) < impl.apply(rand));
+        assertTrue(mean.compute(rand) < impl.compute(rand));
 
         impl = new PowerMean(0.9);
-        assertTrue(mean.apply(rand) > impl.apply(rand));
+        assertTrue(mean.compute(rand) > impl.compute(rand));
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
 
     }
 }

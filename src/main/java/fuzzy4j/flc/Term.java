@@ -5,9 +5,9 @@ import fuzzy4j.sets.TrapezoidalFunction;
 import fuzzy4j.sets.TriangularFunction;
 
 /**
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
-public class Term {
+public record Term(String name, FuzzyFunction set) {
 
     /**
      * Construct a term with a triangular apply function.
@@ -46,14 +46,6 @@ public class Term {
         return new Term(name, set);
     }
 
-    public final String name;
-    public final FuzzyFunction set;
-
-    public Term(String name, FuzzyFunction set) {
-        this.name = name;
-        this.set = set;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -68,6 +60,7 @@ public class Term {
         return name.hashCode();
     }
 
+    @Override
     public String toString() {
         return name;
     }

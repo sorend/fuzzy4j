@@ -18,9 +18,9 @@ package fuzzy4j.sets;
  * }
  * </pre>
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class CosineFunction implements FuzzyFunction, CenterAware {
+public class CosineFunction implements FuzzyFunction {
 
     private double alpha;
     private double beta;
@@ -50,10 +50,5 @@ public class CosineFunction implements FuzzyFunction, CenterAware {
     @Override
     public String toString() {
         return "cos";
-    }
-
-    @Override
-    public double center() {
-        return beta;
     }
 }

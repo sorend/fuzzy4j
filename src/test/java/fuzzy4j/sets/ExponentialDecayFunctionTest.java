@@ -1,9 +1,9 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -13,7 +13,7 @@ public class ExponentialDecayFunctionTest {
     ExponentialDecayFunction impl;
 
     @Test
-    public void testMembership() throws Exception {
+    void testMembership() {
 
         impl = new ExponentialDecayFunction(0., 1.);
 

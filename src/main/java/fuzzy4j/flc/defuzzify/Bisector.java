@@ -6,7 +6,7 @@ import fuzzy4j.sets.FuzzyFunction;
 /**
  * Support Bisector-type defuzzification.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class Bisector extends SamplingDefuzzify {
 

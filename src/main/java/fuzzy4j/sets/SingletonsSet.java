@@ -1,13 +1,13 @@
 package fuzzy4j.sets;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.Valued;
 
 import java.util.*;
 import java.util.Map.Entry;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public final class SingletonsSet<V extends Valued> {
 
@@ -57,9 +57,7 @@ public final class SingletonsSet<V extends Valued> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        SingletonsSet weightedSingletons = (SingletonsSet) o;
+        if (!(o instanceof SingletonsSet weightedSingletons)) return false;
 
         if (!members.equals(weightedSingletons.members)) return false;
 
@@ -97,13 +95,14 @@ public final class SingletonsSet<V extends Valued> {
         return newSet;
     }
 
-    public double aggregate(Aggregation operator) {
+    public double aggregate(Mean operator) {
         double[] d = new double[members.size()];
         int i = 0;
         for (Double v : members.values())
             d[i++] = v;
-        return operator.apply(d);
+        return operator.compute(d);
     }
+
 
     public SingletonsSet<V> alphacut(double alpha) {
         SingletonsSet<V> set = new SingletonsSet<V>();
@@ -128,9 +127,9 @@ public final class SingletonsSet<V extends Valued> {
 
     @Override
     public String toString() {
-        StringBuilder b = new StringBuilder("{ ");
-        for (Iterator<V> it = members.keySet().iterator(); it.hasNext();) {
-            V v = it.next();
+        var b = new StringBuilder("{ ");
+        for (var it = members.keySet().iterator(); it.hasNext();) {
+            var v = it.next();
             double membership = members.get(v);
             b.append(String.format("%f/%s", membership, v.toString()));
             if (it.hasNext())

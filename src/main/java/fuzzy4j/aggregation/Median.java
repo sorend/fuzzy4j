@@ -5,14 +5,14 @@ import java.util.Arrays;
 /**
  * Median "mean" aggregation operator. Will take the middle of the vector of numbers.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
-public class Median implements Aggregation {
+public class Median implements Mean {
 
     public static Median INSTANCE = new Median();
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
         Arrays.sort(values);

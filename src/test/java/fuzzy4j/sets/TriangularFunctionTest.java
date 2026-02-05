@@ -1,24 +1,13 @@
 package fuzzy4j.sets;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * @author Soren <sorend@gmail.com>
  */
 public class TriangularFunctionTest {
-
-    @Test
-    public void center() {
-
-        TriangularFunction f = new TriangularFunction(0, 1, 2);
-
-        assertEquals(1.0, f.center());
-
-        TriangularFunction f2 = new TriangularFunction(0, 10, 11);
-        assertEquals(10.0, f2.center());
-    }
 
     @Test
     public void simple() {

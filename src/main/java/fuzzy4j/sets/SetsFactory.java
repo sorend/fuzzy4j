@@ -5,7 +5,7 @@ import fuzzy4j.util.SimpleInterval;
 /**
  * Defines simple apply functions for use in every-day fuzzy logic problems :-)
  *
- * @author Soren AD <sdavid08@student.aau.dk>
+ * Soren AD (sdavid08@student.aau.dk)
  */
 public class SetsFactory {
 
@@ -59,7 +59,7 @@ public class SetsFactory {
         }
     }
 
-    private static class Pow2Function implements FuzzyFunction, SupportAware {
+    private static class Pow2Function implements FuzzyFunction {
         private double a;
         private double n;
 
@@ -77,14 +77,9 @@ public class SetsFactory {
             else
                 return Math.pow(x, 2) / n;
         }
-
-        @Override
-        public SimpleInterval support() {
-            return new SimpleInterval(false, 0.0, Double.POSITIVE_INFINITY, true);
-        }
     }
 
-    private static class PowerFunction implements FuzzyFunction, SupportAware {
+    private static class PowerFunction implements FuzzyFunction {
         private double b;
         private double a;
 
@@ -96,11 +91,6 @@ public class SetsFactory {
         @Override
         public double apply(double x) {
             return b * Math.pow(x, a);
-        }
-
-        @Override
-        public SimpleInterval support() {
-            return new SimpleInterval(false, 0.0, Double.POSITIVE_INFINITY, true);
         }
 
         public String toString() {

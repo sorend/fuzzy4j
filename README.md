@@ -36,7 +36,7 @@ Once the repository has been added, the artifact can be included in your project
 Fuzzy sets
 ----------
 
-Fuzzy sets are implemented as FuzzyFunctions. The current implementations are found in the fuzzy.sets package.
+Fuzzy sets are implemented as FuzzyFunctions. The current implementations are found in the fuzzy4j.sets package.
 Creating a fuzzy set based on a specific triangular function and it's negation.
 
     FuzzyFunction f = new TriangularFunction(0.0, 1.5, 6.0);

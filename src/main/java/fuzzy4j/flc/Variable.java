@@ -8,7 +8,7 @@ import java.util.List;
  * Defines variables of a fuzzy controller. The variable has a name, and a set of
  * fuzzy terms attached, as well as a universe for which the input can take.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class Variable {
 
@@ -22,7 +22,7 @@ public class Variable {
      * @return
      */
     public static Variable input(String name, Term... terms) {
-        Variable var = new Variable();
+        var var = new Variable();
         var.name = name;
         var.input = true;
         if (terms != null)
@@ -40,7 +40,7 @@ public class Variable {
      * @return
      */
     public static Variable output(String name, Term... terms) {
-        Variable var = new Variable();
+        var var = new Variable();
         var.name = name;
         var.input = false;
         if (terms != null)
@@ -113,8 +113,7 @@ public class Variable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Variable variable = (Variable) o;
+        if (!(o instanceof Variable variable)) return false;
         if (input != variable.input) return false;
         if (!name.equals(variable.name)) return false;
 

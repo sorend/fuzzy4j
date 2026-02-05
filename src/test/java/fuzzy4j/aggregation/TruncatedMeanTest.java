@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -12,7 +12,7 @@ public class TruncatedMeanTest {
     TruncatedMean impl;
 
     @Test
-    public void testCreation() {
+    void testCreation() {
         try {
             TruncatedMean.BY_PERCENTILE.create();
             fail();
@@ -52,30 +52,30 @@ public class TruncatedMeanTest {
     }
 
     @Test
-    public void testApply_basic() throws Exception {
+    void testApply_basic() {
 
         impl = new TruncatedMean(0.25, 0.75);
 
-        assertEquals(Double.NaN, impl.apply());
-        assertEquals(Double.NaN, impl.apply(null));
+        assertEquals(Double.NaN, impl.compute());
+        assertEquals(Double.NaN, impl.compute(null));
 
-        assertEquals(0.0, impl.apply(0));
-        assertEquals(1.0, impl.apply(1));
-        assertEquals(0.8, impl.apply(0.8));
+        assertEquals(0.0, impl.compute(0));
+        assertEquals(1.0, impl.compute(1));
+        assertEquals(0.8, impl.compute(0.8));
     }
 
     @Test
-    public void testApply() throws Exception {
+    void testApply() {
 
         impl = new TruncatedMean(0.25, 0.75);
 
-        assertEquals(0.5, impl.apply(0.05, 0.1, 0.9, 0.91));
+        assertEquals(0.5, impl.compute(0.05, 0.1, 0.9, 0.91));
 
-        // not defined yet, assertEquals(0.5, impl.apply(0.05, 0.5, 0.7));
+        // not defined yet, assertEquals(0.5, impl.compute(0.05, 0.5, 0.7));
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         impl = new TruncatedMean(0.25, 0.75);
         assertNotNull(impl.toString());
         assertTrue(impl.toString().contains("h_"));

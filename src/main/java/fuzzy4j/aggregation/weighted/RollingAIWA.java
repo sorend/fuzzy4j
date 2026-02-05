@@ -3,9 +3,9 @@ package fuzzy4j.aggregation.weighted;
 /**
  * Andness-directed Implicative-importance Weighted Averaging.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class RollingAIWA implements WeightedRollingAggregation<RollingAIWA> {
+public class RollingAIWA implements WeightedRollingMean<RollingAIWA> {
 
     public final double p;
     public final double alpha;
@@ -28,12 +28,12 @@ public class RollingAIWA implements WeightedRollingAggregation<RollingAIWA> {
     public RollingAIWA add(WeightedValue... values) {
         for (int i = 0; i < values.length; i++) {
             if (p <= 0.5) {
-                s += Math.pow(values[i].weight * values[i].value, alpha);
-                d += Math.pow(values[i].weight, alpha);
+                s += Math.pow(values[i].weight() * values[i].value(), alpha);
+                d += Math.pow(values[i].weight(), alpha);
             }
             else {
-                s += Math.pow(values[i].weight * (1. - values[i].value), 1./alpha);
-                d += Math.pow(values[i].weight, 1./alpha);
+                s += Math.pow(values[i].weight() * (1. - values[i].value()), 1./alpha);
+                d += Math.pow(values[i].weight(), 1./alpha);
             }
         }
         return this;

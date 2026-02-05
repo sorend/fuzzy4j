@@ -1,18 +1,18 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 /**
  * Retrieves the discretized value.
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public interface InputInstanceAccessor {
 
     // the current fuzzy "or" function
-    Aggregation orFunction();
+    Mean orFunction();
 
     // the current fuzzy "and" function
-    Aggregation andFunction();
+    Mean andFunction();
 
     // ex: valueOf("temp", "low")
     double valueOf(Variable variable, Term label);

@@ -8,9 +8,9 @@ import java.util.Arrays;
  * [1] Henrik L. Larsen, "Multiplicative and implicative importance weighted averaging operators with accurate andness direction",
  *      In Proc. of IFSA-EUSFLAT, 2009.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class WeightedOWA implements WeightedAggregation {
+public class WeightedOWA implements WeightedMean {
 
     private double[] weights;
     private double p;
@@ -30,7 +30,7 @@ public class WeightedOWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
         // we need same lenghts
         int min = Math.min(values.length, weights.length);
         // sort
@@ -41,7 +41,7 @@ public class WeightedOWA implements WeightedAggregation {
             double s = 0.0;
             double R_exp = l * ((2 * p) - 1.);
             for (int i = 0; i < min; i++) {
-                double I_R = 1. - Math.pow(values[i].weight, R_exp) * (1. - values[i].value);
+                double I_R = 1. - Math.pow(values[i].weight(), R_exp) * (1. - values[i].value());
                 s += weights[i] * I_R;
             }
             return s;
@@ -50,7 +50,7 @@ public class WeightedOWA implements WeightedAggregation {
             double s = 0.0;
             double R_exp = l * ((2 * (1. - p)) - 1.);
             for (int i = 0; i < min; i++) {
-                double I_R = 1. - Math.pow(values[i].weight, R_exp) * values[i].value;
+                double I_R = 1. - Math.pow(values[i].weight(), R_exp) * values[i].value();
                 s += weights[i] * I_R;
             }
             return s;

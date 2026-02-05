@@ -1,11 +1,11 @@
 package fuzzy4j.aggregation;
 
-import org.junit.After;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -14,13 +14,13 @@ public class OWATest {
 
     OWA impl;
 
-    @After
-    public void printAfter() {
+    @AfterEach
+    void printAfter() {
         System.out.println("OWA = " + impl);
     }
 
     @Test
-    public void testOrness_and_Dispersion() throws Exception {
+    void testOrness_and_Dispersion() {
 
         impl = new OWA(0, 0, 1, 0, 0);
         assertEquals(0.5, impl.orness(), 0.00001);
@@ -33,7 +33,7 @@ public class OWATest {
     }
 
     @Test
-    public void testMeowaFactory_Paper_Example() throws Exception {
+    void testMeowaFactory_Paper_Example() {
 
         impl = OWA.MEOWA_FACTORY(3, 0.80);
 
@@ -47,23 +47,23 @@ public class OWATest {
 
 
     @Test
-    public void testMeowa_Parametric_Factory() throws Exception {
+    void testMeowa_Parametric_Factory() {
 
         impl = OWA.MEOWA_FACTORY(3, 0.80);
 
-        Aggregation meowa = OWA.MEOWA.create(0.80);
+        Mean meowa = OWA.MEOWA.create(0.80);
 
         assertNotNull(meowa);
         assertNotNull(impl);
 
-        double val = meowa.apply(0.3, 0.6, 0.9);
-        double val2 = impl.apply(0.3, 0.6, 0.9);
+        double val = meowa.compute(0.3, 0.6, 0.9);
+        double val2 = impl.compute(0.3, 0.6, 0.9);
 
         assertEquals(val, val2);
     }
 
     @Test
-    public void testMeowaFactory_Andness() throws Exception {
+    void testMeowaFactory_Andness() {
 
         impl = OWA.MEOWA_FACTORY(3, 0.80);
         OWA impl2 = OWA.MEOWA_FACTORY(3, 0.5);
@@ -81,19 +81,19 @@ public class OWATest {
     }
 
     @Test
-    public void testOWAOperator_Max() throws Exception {
+    void testOWAOperator_Max() {
         impl = new OWA(1.0, 0, 0, 0);
-        assertEquals(0.8, impl.apply(0.5, 0.2, 0.8, 0.1));
+        assertEquals(0.8, impl.compute(0.5, 0.2, 0.8, 0.1));
     }
 
     @Test
-    public void testOWAOperator_Min() throws Exception {
+    void testOWAOperator_Min() {
         impl = new OWA(0, 0, 0, 1.0);
-        assertEquals(0.1, impl.apply(0.5, 0.2, 0.8, 0.1));
+        assertEquals(0.1, impl.compute(0.5, 0.2, 0.8, 0.1));
     }
 
     @Test
-    public void testMeowa_Max() throws Exception {
+    void testMeowa_Max() {
 
         impl = OWA.MEOWA_FACTORY(3, 0.0);
 
@@ -102,7 +102,7 @@ public class OWATest {
     }
 
     @Test
-    public void testMeowa_Min() throws Exception {
+    void testMeowa_Min() {
 
         impl = OWA.MEOWA_FACTORY(3, 1.0);
 

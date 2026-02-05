@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 /**
  * Support Centroid-type defuzzification.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class Centroid extends SamplingDefuzzify {
 

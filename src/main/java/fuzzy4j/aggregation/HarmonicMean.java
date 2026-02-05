@@ -8,14 +8,14 @@ package fuzzy4j.aggregation;
  *
  * [1] Wolfram Alpha, "HarmonicMean", <a href="http://mathworld.wolfram.com/HarmonicMean.html">http://mathworld.wolfram.com/HarmonicMean.html</a>, 2011
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class HarmonicMean implements Aggregation {
+public class HarmonicMean implements Mean {
 
     public static HarmonicMean INSTANCE = new HarmonicMean();
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         if (values == null || values.length == 0)
             return Double.NaN;
         double s = 0.0;

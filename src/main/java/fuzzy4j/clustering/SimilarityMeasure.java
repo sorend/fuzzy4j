@@ -3,7 +3,7 @@ package fuzzy4j.clustering;
 /**
  * Design interface for similarity between objects.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public interface SimilarityMeasure<V> {
     /**

@@ -1,11 +1,11 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 
 import java.util.Arrays;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class ExpressionFactory {
 
@@ -17,7 +17,7 @@ public class ExpressionFactory {
         return new OrExpression(expressions);
     }
 
-    public static Expression other(Aggregation aggregation, Expression... expressions) {
+    public static Expression other(Mean aggregation, Expression... expressions) {
         return new OtherExpression(aggregation, expressions);
     }
 
@@ -70,10 +70,10 @@ public class ExpressionFactory {
     }
 
     private static class OtherExpression implements Expression {
-        private Aggregation aggregation;
+        private Mean aggregation;
         private Expression[] inners;
 
-        private OtherExpression(Aggregation aggregation, Expression[] inners) {
+        private OtherExpression(Mean aggregation, Expression[] inners) {
             this.aggregation = aggregation;
             this.inners = inners;
         }
@@ -83,7 +83,7 @@ public class ExpressionFactory {
             double[] res = new double[inners.length];
             for (int i = 0; i < inners.length; i++)
                 res[i] = inners[i].apply(accessor);
-            return aggregation.apply(res);
+            return aggregation.compute(res);
         }
     }
 
@@ -99,7 +99,7 @@ public class ExpressionFactory {
             double[] res = new double[inners.length];
             for (int i = 0; i < inners.length; i++)
                 res[i] = inners[i].apply(accessor);
-            return accessor.andFunction().apply(res);
+            return accessor.andFunction().compute(res);
         }
 
         public String toString() {
@@ -119,7 +119,7 @@ public class ExpressionFactory {
             double[] res = new double[inners.length];
             for (int i = 0; i < inners.length; i++)
                 res[i] = inners[i].apply(accessor);
-            return accessor.orFunction().apply(res);
+            return accessor.orFunction().compute(res);
         }
 
         public String toString() {

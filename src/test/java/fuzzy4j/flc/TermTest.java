@@ -3,9 +3,9 @@ package fuzzy4j.flc;
 import fuzzy4j.sets.PiFunction;
 import fuzzy4j.sets.TrapezoidalFunction;
 import fuzzy4j.sets.TriangularFunction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -15,24 +15,24 @@ public class TermTest {
     Term impl;
 
     @Test
-    public void testTerm_triangular() throws Exception {
+    void testTerm_triangular() {
         impl = Term.term("low", 0, 1, 2);
-        assertTrue(impl.set instanceof TriangularFunction);
-        assertEquals(1.0, impl.set.apply(1));
-        assertEquals(0.5, impl.set.apply(0.5));
-        assertEquals("low", impl.name);
+        assertTrue(impl.set() instanceof TriangularFunction);
+        assertEquals(1.0, impl.set().apply(1));
+        assertEquals(0.5, impl.set().apply(0.5));
+        assertEquals("low", impl.name());
     }
 
     @Test
-    public void testTerm_trapeze() throws Exception {
+    void testTerm_trapeze() {
         impl = Term.term("medium", 0, 1, 2, 3);
-        assertTrue(impl.set instanceof TrapezoidalFunction);
+        assertTrue(impl.set() instanceof TrapezoidalFunction);
     }
 
     @Test
-    public void testTerm() throws Exception {
+    void testTerm() {
         impl = Term.term("any", new PiFunction(0, 1, 3, 1));
-        assertTrue(impl.set instanceof PiFunction);
+        assertTrue(impl.set() instanceof PiFunction);
 
         try {
             impl = Term.term(null, new PiFunction(0, 1, 3, 1));
@@ -48,7 +48,7 @@ public class TermTest {
     }
 
     @Test
-    public void testEquals() throws Exception {
+    void testEquals() {
 
         impl = Term.term("any", 0, 1, 2);
         Term term2 = Term.term("any", 5, 10, 20);
@@ -66,7 +66,7 @@ public class TermTest {
     }
 
     @Test
-    public void testToString() throws Exception {
+    void testToString() {
         impl = Term.term("any", 0, 1, 2);
         assertNotNull(impl.toString());
     }

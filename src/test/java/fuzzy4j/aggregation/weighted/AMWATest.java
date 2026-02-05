@@ -1,8 +1,8 @@
 package fuzzy4j.aggregation.weighted;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <sorend@gmail.com>
@@ -12,13 +12,13 @@ public class AMWATest {
     AMWA impl;
 
     @Test
-    public void testCalc_p_gt_0_5() {
+    void testCalc_p_gt_0_5() {
 
         impl = new AMWA(2./3.);
 
-        double A = impl.apply(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
+        double A = impl.compute(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
 
-        double B = impl.apply(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
+        double B = impl.compute(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
 
         System.out.println("A = " + A + ", B = " + B);
 
@@ -29,13 +29,13 @@ public class AMWATest {
     }
 
     @Test
-    public void testCalc_p_lt_0_5() {
+    void testCalc_p_lt_0_5() {
 
         impl = new AMWA(1./3.);
 
-        double A = impl.apply(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
+        double A = impl.compute(WeightedValue.pairs(0.4, 0.1, 1.0, 0.7));
 
-        double B = impl.apply(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
+        double B = impl.compute(WeightedValue.pairs(0.4, 0.9, 1.0, 0.4));
 
         System.out.println("A = " + A + ", B = " + B);
 

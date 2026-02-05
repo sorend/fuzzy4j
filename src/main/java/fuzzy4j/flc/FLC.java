@@ -1,6 +1,6 @@
 package fuzzy4j.flc;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.flc.defuzzify.Defuzzify;
 import fuzzy4j.sets.*;
 
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * Implementation of a fuzzy logic controller.
  *
  * @see ControllerBuilder
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class FLC {
 
@@ -21,17 +21,17 @@ public class FLC {
     private Variable[] inputs;
     private Variable[] outputs;
 
-    private Aggregation tnorm;
-    private Aggregation tconorm;
-    private Aggregation activationNorm;
-    private Aggregation accumulationTconorm;
+    private Mean tnorm;
+    private Mean tconorm;
+    private Mean activationNorm;
+    private Mean accumulationTconorm;
     private Defuzzify defuzzifier;
     private List<IfThenRule> rules;
 
-    public FLC(Aggregation tnorm,
-               Aggregation tconorm,
-               Aggregation activationNorm,
-               Aggregation accumulationTconorm,
+    public FLC(Mean tnorm,
+               Mean tconorm,
+               Mean activationNorm,
+               Mean accumulationTconorm,
                Defuzzify defuzzifier,
                List<IfThenRule> rules) {
         this.tnorm = tnorm;
@@ -65,16 +65,16 @@ public class FLC {
                 if (v == null)
                     return 0.0;
                 else
-                    return label.set.apply(v);
+                    return label.set().apply(v);
             }
 
             @Override
-            public Aggregation orFunction() {
+            public Mean orFunction() {
                 return FLC.this.tconorm;
             }
 
             @Override
-            public Aggregation andFunction() {
+            public Mean andFunction() {
                 return FLC.this.tnorm;
             }
         };
@@ -98,7 +98,7 @@ public class FLC {
                 // add the bounded set to the outputs.
                 varOutput.get(rule.then.variable)
                         .add(new CompositeFunction(activationNorm,
-                                rule.then.value.set,
+                                rule.then.value.set(),
                                 new ConstantFunction(firingStrength)));
             }
         }

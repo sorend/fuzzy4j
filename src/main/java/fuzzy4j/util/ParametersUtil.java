@@ -3,13 +3,13 @@ package fuzzy4j.util;
 import fuzzy4j.aggregation.weighted.WeightedValue;
 
 /**
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class ParametersUtil {
 
     public static void assertWeightedSumOne(WeightedValue... args) {
         double sum = 0.0;
-        for (int i = 0; i< args.length; i++) sum += args[i].weight;
+        for (int i = 0; i< args.length; i++) sum += args[i].weight();
         double diff = Math.abs(1.0 - sum);
         if (diff > 0.00001)
             throw new IllegalArgumentException("sum(weights) is not 1 as required.");

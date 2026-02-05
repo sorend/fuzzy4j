@@ -1,12 +1,12 @@
 package fuzzy4j.util;
 
 import fuzzy4j.sets.TriangularFunction;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
@@ -15,7 +15,7 @@ public class FuzzyUtilTest {
 
 
     @Test
-    public void testProbe() throws Exception {
+    void testProbe() {
 
         TriangularFunction tri = new TriangularFunction(0, 1, 2);
 

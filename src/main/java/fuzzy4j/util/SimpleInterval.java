@@ -1,15 +1,14 @@
 package fuzzy4j.util;
 
-import fuzzy4j.aggregation.Aggregation;
+import fuzzy4j.aggregation.Mean;
 import fuzzy4j.sets.FuzzyFunction;
-import fuzzy4j.sets.SupportAware;
 
 /**
  * Representation of an interval.
  *
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
-public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
+public class SimpleInterval implements Range, FuzzyFunction {
 
     public static SimpleInterval i(double start, double end) {
         return new SimpleInterval(true, start, end, true);
@@ -114,17 +113,8 @@ public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
      * @param other
      * @return
      */
-    public SimpleInterval aggregate(Aggregation aggregation, SimpleInterval other) {
-        return i(aggregation.apply(min(), other.min()), aggregation.apply(max(), other.max()));
-    }
-
-    /**
-     * Returns the support of this interval (the interval itself)
-     * @return
-     */
-    @Override
-    public SimpleInterval support() {
-        return this;
+    public SimpleInterval aggregate(Mean aggregation, SimpleInterval other) {
+        return i(aggregation.compute(min(), other.min()), aggregation.compute(max(), other.max()));
     }
 
     /**
@@ -158,9 +148,7 @@ public class SimpleInterval implements Range, FuzzyFunction, SupportAware {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        SimpleInterval that = (SimpleInterval) o;
+        if (!(o instanceof SimpleInterval that)) return false;
 
         if (leftInclusive != that.leftInclusive) return false;
         if (Double.compare(that.max, max) != 0) return false;

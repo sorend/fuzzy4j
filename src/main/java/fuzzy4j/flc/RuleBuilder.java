@@ -3,7 +3,7 @@ package fuzzy4j.flc;
 /**
  * Build rules in an easy manner.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public class RuleBuilder {
 

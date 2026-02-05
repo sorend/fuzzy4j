@@ -1,7 +1,7 @@
 package fuzzy4j.util;
 
 /**
- * @author Soren <sorend@gmail.com>
+ * Soren (sorend@gmail.com)
  */
 public class InvertedRange implements Range {
     private Range inner;

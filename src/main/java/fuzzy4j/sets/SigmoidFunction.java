@@ -10,11 +10,11 @@ import fuzzy4j.util.SimpleInterval;
  *
  * Where:
  *      x0 is the location of the x-axis position of the center of the curve.
- *      alpha defines the steepness of the curve. alpha is large means steep, alpha is small (<0) means less steep.
+ *      alpha defines the steepness of the curve. alpha is large means steep, alpha is small (&lt;0) means less steep.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class SigmoidFunction implements FuzzyFunction, SupportAware {
+public class SigmoidFunction implements FuzzyFunction {
 
     private double alpha;
     private double x0;
@@ -27,12 +27,5 @@ public class SigmoidFunction implements FuzzyFunction, SupportAware {
     @Override
     public double apply(double x) {
         return 1.0 / (1.0 + Math.exp(-alpha * (x - x0)));
-    }
-
-    @Override
-    public SimpleInterval support() {
-        double min = x0 - 9 / Math.abs(alpha);
-        double max = x0 + 9 / Math.abs(alpha);
-        return new SimpleInterval(true, min, max, true);
     }
 }

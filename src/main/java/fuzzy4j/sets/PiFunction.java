@@ -15,12 +15,12 @@ package fuzzy4j.sets;
  * }
  * </pre>
  *
- * [1] Saroj K. Meher, "A new Fuzzy Supervised Classification Method based on Aggregation Operator",
+ * [1] Saroj K. Meher, "A new Fuzzy Supervised Classification Method based on Mean Operator",
  *  in 3rd Int. IEEE Conf. on Signal-Image Tech. and Internet-Based Systems, 2008.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class PiFunction implements FuzzyFunction, CenterAware {
+public class PiFunction implements FuzzyFunction {
 
     public final double a, r, b, m, p, q;
     // private double a, r, b, m, p, q;
@@ -53,10 +53,5 @@ public class PiFunction implements FuzzyFunction, CenterAware {
     @Override
     public String toString() {
         return String.format("Pi(%.2f, %.2f, %.2f)", a, r, b);
-    }
-
-    @Override
-    public double center() {
-        return r;
     }
 }

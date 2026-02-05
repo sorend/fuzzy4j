@@ -10,9 +10,9 @@ package fuzzy4j.aggregation.weighted;
  * [1] H. L. Larsen, "Multiplicative and implicative importance weighted averaging aggregation operators with accurate andness direction",
  *      In Proc. of IFSA-EUSFLAT 2009, 2009.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class AWA implements WeightedAggregation {
+public class AWA implements WeightedMean {
 
     public final double p;
     public final double l;
@@ -27,7 +27,7 @@ public class AWA implements WeightedAggregation {
     }
 
     @Override
-    public double apply(WeightedValue... values) {
+    public double compute(WeightedValue... values) {
 
         if (p <= .5) {
             double alpha = (1. - p) / p;
@@ -37,7 +37,7 @@ public class AWA implements WeightedAggregation {
         else {
             WeightedValue[] invV = new WeightedValue[values.length];
             for (int i = 0; i < values.length; i++)
-                invV[i] = WeightedValue.w(values[i].weight, 1. - values[i].value);
+                invV[i] = WeightedValue.w(values[i].weight(), 1. - values[i].value());
 
             double alpha = (1. - (1. - p)) / (1. - p);
             double y_exp = Math.pow(alpha, l);
@@ -49,11 +49,11 @@ public class AWA implements WeightedAggregation {
     private static double doCalc(double y_exp, double alpha, WeightedValue... values) {
         double y_s = 0.0;
         for (int i = 0; i < values.length; i++)
-            y_s += Math.pow(values[i].weight, y_exp);
+            y_s += Math.pow(values[i].weight(), y_exp);
 
         double s = 0.;
         for (int i = 0; i < values.length; i++) {
-            s += (Math.pow(values[i].weight, y_exp) / y_s) * Math.pow(values[i].value, alpha);
+            s += (Math.pow(values[i].weight(), y_exp) / y_s) * Math.pow(values[i].value(), alpha);
         }
         return Math.pow(s, 1. / alpha);
     }

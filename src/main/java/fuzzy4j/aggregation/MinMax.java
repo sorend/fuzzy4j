@@ -5,9 +5,9 @@ package fuzzy4j.aggregation;
  *
  * Defined as <code>h_minmax(v) = (1-p) * min(v) + p * max(v)</code>.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class MinMax implements Aggregation {
+public class MinMax implements Mean {
 
     public static MinMax MIDRANGE = new MinMax(0.5);
 
@@ -29,7 +29,7 @@ public class MinMax implements Aggregation {
     }
 
     @Override
-    public double apply(double... values) {
+    public double compute(double... values) {
         double[] minmax = Maximum.minmax(values);
         return (1.-p) * minmax[0] + p * minmax[1];
     }

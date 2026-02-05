@@ -7,9 +7,9 @@ import static fuzzy4j.util.SimpleInterval.i;
 /**
  * A trapeze shaped apply function.
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
-public class TrapezoidalFunction implements FuzzyFunction, SupportAware, CenterAware {
+public class TrapezoidalFunction implements FuzzyFunction {
 
     private double a, b, d, c;
     private SimpleInterval support;
@@ -31,11 +31,6 @@ public class TrapezoidalFunction implements FuzzyFunction, SupportAware, CenterA
     }
 
     @Override
-    public SimpleInterval support() {
-        return this.support;
-    }
-
-    @Override
     public double apply(double x) {
         if (x < a)
             return 0.0;
@@ -47,11 +42,6 @@ public class TrapezoidalFunction implements FuzzyFunction, SupportAware, CenterA
             return (d - x) / (d - c);
         else
             return 0.0;
-    }
-
-    @Override
-    public double center() {
-        return b + ((c - b) / 2.0);
     }
 
     public String toString() {

@@ -17,7 +17,7 @@ package fuzzy4j.sets;
  * }
  * </pre>
  *
- * @author Soren A. Davidsen <sorend@gmail.com>
+ * Soren A. Davidsen (sorend@gmail.com)
  */
 public class LinearFunction implements FuzzyFunction {
 

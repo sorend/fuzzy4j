@@ -5,7 +5,7 @@ package fuzzy4j.flc;
  *
  * Static implementations for different common hedges.
  *
- * @author Soren A. Davidsen <soren@atmakuridavidsen.com>
+ * Soren A. Davidsen (soren@atmakuridavidsen.com)
  */
 public interface Hedge {
 
